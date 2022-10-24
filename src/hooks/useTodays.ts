@@ -208,6 +208,7 @@ function getCountry(dayString: string) {
       let countryIndex = Math.floor(
         seedrandom.alea(pickingDateString)() * countrySelection.length
       );
+      // console.log({ countryIndex, countrySelection });
       pickedCountry = countrySelection[countryIndex];
 
       if (pickingDate >= noRepeatStartDate) {
