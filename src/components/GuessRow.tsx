@@ -124,7 +124,7 @@ export function GuessRow({
         <>
           <div className="flex items-center justify-center border-2 h-8 col-span-3 animate-reveal rounded">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
-              {guess?.name.toUpperCase()}
+              {guess?.name}
             </p>
           </div>
           <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
