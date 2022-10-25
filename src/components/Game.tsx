@@ -60,7 +60,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const gameEnded =
     guesses.length === MAX_TRY_COUNT ||
-    guesses[guesses.length - 1]?.distance === 0;
+    guesses[guesses.length - 1]?.code === country?.code;
+
+  console.log({ gameEnded, guesses, country });
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
@@ -82,6 +84,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
       const newGuess = {
         name: currentGuess,
+        code:
+          countries.find((c) => c.name === currentGuess)?.code ??
+          "affenpinscher",
         distance: geolib.getDistance(guessedCountry, country),
         direction: geolib.getCompassDirection(
           guessedCountry,
@@ -94,7 +99,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       addGuess(newGuess);
       setCurrentGuess("");
 
-      if (newGuess.distance === 0) {
+      if (guessedCountry === country) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
