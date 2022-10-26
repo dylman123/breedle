@@ -96,7 +96,7 @@ export function GuessRow({
       return (
         <>
           <div
-            className={`flex text-2xl w-full justify-evenly items-center col-span-6 border-2 h-8 rounded`}
+            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded`}
           >
             {squares.map((character, index) => (
               <div
@@ -110,32 +110,32 @@ export function GuessRow({
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
+          {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
             <CountUp
               end={percentToDisplay}
               suffix="%"
               duration={(SQUARE_ANIMATION_LENGTH * 5) / 1000}
             />
-          </div>
+          </div> */}
         </>
       );
     case "ENDED":
       return (
         <>
-          <div className="flex items-center justify-center border-2 h-8 col-span-3 animate-reveal rounded">
+          <div className="flex items-center justify-center border-2 h-8 col-span-7 animate-reveal rounded">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
               {guess?.name}
             </p>
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+          {/* <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
             {guess && formatDistance(guess.distance, distanceUnit)}
-          </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
+          </div> */}
+          {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
             {guess && <Twemoji text={getDirectionEmoji(guess)} />}
-          </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal animate-pop rounded">
+          </div> */}
+          {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal animate-pop rounded">
             {`${percentToDisplay}%`}
-          </div>
+          </div> */}
         </>
       );
   }
