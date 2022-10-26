@@ -159,7 +159,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in ${
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
-          alt="country to guess"
+          alt="dog breed to guess"
           src={`images/countries/${country?.code}/image.jpg`}
           style={
             rotationMode && !gameEnded
@@ -283,7 +283,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 type="submit"
               >
                 <Twemoji
-                  text="🌍"
+                  text="🐶"
                   options={{ className: "inline-block" }}
                   className="flex items-center justify-center"
                 />{" "}

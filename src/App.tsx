@@ -86,18 +86,18 @@ export default function App() {
         close={() => setInfoOpen(false)}
         settingsData={settingsData}
       />
-      <Settings
+      {/* <Settings
         isOpen={settingsOpen}
         close={() => setSettingsOpen(false)}
         settingsData={settingsData}
         updateSettings={updateSettings}
-      />
+      /> */}
       <Stats
         isOpen={statsOpen}
         close={() => setStatsOpen(false)}
         distanceUnit={settingsData.distanceUnit}
       />
-      <div className="flex justify-center flex-auto dark:bg-slate-900 dark:text-slate-50">
+      <div className="flex justify-center flex-auto dark:bg-slate-800 dark:text-slate-50">
         <div className="w-full max-w-lg flex flex-col">
           <header className="border-b-2 px-3 border-gray-200 flex">
             <button
@@ -108,7 +108,7 @@ export default function App() {
               <Twemoji text="❓" />
             </button>
             <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              Wor<span className="text-green-600">l</span>dle
+              <span className="text-yellow-300">Breed</span>le
             </h1>
             <button
               className="ml-3 text-xl"
@@ -117,13 +117,13 @@ export default function App() {
             >
               <Twemoji text="📈" />
             </button>
-            <button
+            {/* <button
               className="ml-3 text-xl"
               type="button"
               onClick={() => setSettingsOpen(true)}
             >
               <Twemoji text="⚙️" />
-            </button>
+            </button> */}
           </header>
           <Game settingsData={settingsData} updateSettings={updateSettings} />
           <footer className="flex justify-center items-center mt-8 mb-4">
@@ -144,7 +144,7 @@ export default function App() {
             ) : (
               <a
                 className="underline pl-1"
-                href="https://www.ko-fi.com/teuteuf"
+                href="https://ko-fi.com/dylman123"
                 target="_blank"
                 rel="noopener noreferrer"
               >

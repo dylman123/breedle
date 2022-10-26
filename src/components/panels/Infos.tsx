@@ -19,13 +19,13 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         <div>
           Guess the <Worldle /> in 6 guesses.
         </div>
-        <div>Each guess must be a valid country, territory, ...</div>
+        <div>Each guess must be a valid dog breed.</div>
         <div>
-          After each guess, you will have the distance, the direction and the
-          proximity from your guess to the target location.
+          After each guess, you will be given feedback on whether you were
+          correct or incorrect.
         </div>
       </div>
-      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+      {/* <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Examples</div>
         <div>
           <Guesses
@@ -87,11 +87,11 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
         A new <Worldle /> will be available every day!
       </div>
-      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+      {/* <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Any question or suggestion?</div>
         <div>
           Check the{" "}
@@ -105,56 +105,56 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           </a>
           !
         </div>
-      </div>
+      </div> */}
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <Worldle /> has been <span className="font-bold">heavily</span> inspired
         by{" "}
         <a
           className="underline"
-          href="https://www.powerlanguage.co.uk/wordle/"
+          href="https://worldle.teuteuf.fr/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Wordle
+          Worldle
         </a>{" "}
         created by{" "}
         <a
           className="underline"
-          href="https://twitter.com/powerlanguish"
+          href="https://twitter.com/teuteuf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Josh Wardle (@powerlanguish)
+          @teuteuf
         </a>
         .
       </div>
       <div className="space-y-3 text-justify pb-3">
         <div>
-          Made by{" "}
+          Made by @dylman123 - (
           <a
             className="underline"
-            href="https://twitter.com/teuteuf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @teuteuf
-          </a>{" "}
-          - (
-          <a
-            className="underline"
-            href="https://github.com/teuteuf/worldle/"
+            href="https://github.com/dylman123/breedle"
             target="_blank"
             rel="noopener noreferrer"
           >
             source code
           </a>
-          )
+          ) - in connection with .
+          <a
+            className="underline"
+            href="https://www.heydoggydoor.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DoggyDoor
+          </a>
+          .
         </div>
         <div>
           Want to support?{" "}
           <a
             className="underline"
-            href="https://www.ko-fi.com/teuteuf"
+            href="https://ko-fi.com/dylman123"
             target="_blank"
             rel="noopener noreferrer"
           >

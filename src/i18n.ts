@@ -5,13 +5,13 @@ import { initReactI18next } from "react-i18next";
 export const translations = {
   en: {
     translation: {
-      placeholder: "Country, territory...",
+      placeholder: "Dog breed...",
       guess: "Guess",
       share: "Share",
       showOnGoogleMaps: "👀 on Google Maps",
       showOnWikipedia: "📚 on Wikipedia",
       welldone: "Well done!",
-      unknownCountry: "Unknown country!",
+      unknownCountry: "Unknown breed!",
       copy: "Copied results to clipboard",
       showCountry: "🗺️ Show map!",
       cancelRotation: "🌀 Cancel rotation",
