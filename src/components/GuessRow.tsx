@@ -3,6 +3,7 @@ import {
   formatDistance,
   generateSquareCharacters,
   getDirectionEmoji,
+  getResultEmoji,
 } from "../domain/geography";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -122,7 +123,7 @@ export function GuessRow({
     case "ENDED":
       return (
         <>
-          <div className="flex items-center justify-center border-2 h-8 col-span-7 animate-reveal rounded">
+          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
               {guess?.name}
             </p>
@@ -130,9 +131,14 @@ export function GuessRow({
           {/* <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
             {guess && formatDistance(guess.distance, distanceUnit)}
           </div> */}
-          {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
-            {guess && <Twemoji text={getDirectionEmoji(guess)} />}
-          </div> */}
+          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
+            {guess && targetCountry && (
+              <Twemoji
+                className="flex items-center"
+                text={getResultEmoji(guess, targetCountry)}
+              />
+            )}
+          </div>
           {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal animate-pop rounded">
             {`${percentToDisplay}%`}
           </div> */}
