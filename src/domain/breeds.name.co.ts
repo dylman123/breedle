@@ -1,5 +1,5 @@
 // Source: https://co.wikipedia.org/wiki/ISO_3166-2
-export const corsicanCountryNames: Record<string, string> = {
+export const corsicanBreedNames: Record<string, string> = {
   AD: "Andorra",
   AE: "Emirati Arabi Uniti",
   AF: "Afghanistan",

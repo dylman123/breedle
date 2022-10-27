@@ -1,7 +1,7 @@
 // Source: https://namen.taalunie.org/
 // Source: http://www.unicode.org/Public/cldr/41/core.zip/common/main/nl.xml
 // Used the first source except where the second was more complete / descriptive.
-export const dutchCountryNames: Record<string, string> = {
+export const dutchBreedNames: Record<string, string> = {
   AF: "Afghanistan",
   AX: "Åland",
   AL: "Albanië",

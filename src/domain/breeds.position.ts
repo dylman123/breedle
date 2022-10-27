@@ -1,4 +1,4 @@
-export const countries = [
+export const breeds = [
   {
     code: "affenpinscher",
     latitude: 0.0,
@@ -1443,4 +1443,4 @@ export const countries = [
   },
 ] as const;
 
-export type CountryCode = typeof countries[number]["code"];
+export type BreedCode = typeof breeds[number]["code"];

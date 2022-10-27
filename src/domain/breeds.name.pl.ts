@@ -1,5 +1,5 @@
 // Source: https://pl.wikipedia.org/wiki/ISO_3166-1
-export const polishCountryNames: Record<string, string> = {
+export const polishBreedNames: Record<string, string> = {
   AF: "Afganistan",
   AX: "Wyspy Alandzkie",
   AL: "Albania",
@@ -250,7 +250,7 @@ export const polishCountryNames: Record<string, string> = {
   ZM: "Zambia",
   ZW: "Zimbabwe",
 
-  // Country codes not part of ISO-3166-1 (reserved, deleted or unassigned):
+  // Breed codes not part of ISO-3166-1 (reserved, deleted or unassigned):
   AN: "Antyle Holenderskie",
   GZ: "Strefa Gazy",
   XK: "Kosowo",

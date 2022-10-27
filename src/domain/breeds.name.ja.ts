@@ -1,5 +1,5 @@
 // Source: https://ja.wikipedia.org/wiki/ISO_3166-1
-export const japaneseCountryNames: Record<string, string> = {
+export const japaneseBreedNames: Record<string, string> = {
   AD: "アンドラ",
   AE: "アラブ首長国連邦",
   AF: "アフガニスタン",
@@ -250,7 +250,7 @@ export const japaneseCountryNames: Record<string, string> = {
   ZM: "ザンビア",
   ZW: "ジンバブエ",
 
-  // Country codes not part of ISO-3166-1 (reserved, deleted or unassigned):
+  // Breed codes not part of ISO-3166-1 (reserved, deleted or unassigned):
   AN: "オランダ領アンティル",
   GZ: "ガザ地区",
   XK: "コソボ",

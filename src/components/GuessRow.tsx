@@ -11,49 +11,49 @@ import CountUp from "react-countup";
 import { SettingsData } from "../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import {
-  Country,
-  getCountryName,
-  sanitizeCountryName,
-} from "../domain/countries";
-import { areas } from "../domain/countries.area";
-import { countries } from "../domain/countries.position";
+  Breed,
+  getBreedName,
+  sanitizeBreedName,
+} from "../domain/breeds";
+import { areas } from "../domain/breeds.area";
+import { breeds } from "../domain/breeds.position";
 import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;
 type AnimationState = "NOT_STARTED" | "RUNNING" | "ENDED";
 
 interface GuessRowProps {
-  targetCountry?: Country;
+  targetBreed?: Breed;
   guess?: Guess;
   settingsData: SettingsData;
-  countryInputRef?: React.RefObject<HTMLInputElement>;
+  breedInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 export function GuessRow({
-  targetCountry,
+  targetBreed,
   guess,
   settingsData,
-  countryInputRef,
+  breedInputRef,
 }: GuessRowProps) {
   const { i18n } = useTranslation();
   const { distanceUnit, theme } = settingsData;
   const proximity = guess != null ? computeProximityPercent(guess.distance) : 0;
   const squares = generateSquareCharacters(proximity, theme);
 
-  const guessedCountry =
+  const guessedBreed =
     guess &&
-    countries.find(
-      (country) =>
-        sanitizeCountryName(getCountryName(i18n.resolvedLanguage, country)) ===
-        sanitizeCountryName(guess.name)
+    breeds.find(
+      (breed) =>
+        sanitizeBreedName(getBreedName(i18n.resolvedLanguage, breed)) ===
+        sanitizeBreedName(guess.name)
     );
 
   const sizePercent =
-    targetCountry &&
-    guessedCountry &&
+    targetBreed &&
+    guessedBreed &&
     Math.min(
       999,
-      Math.round((areas[targetCountry.code] / areas[guessedCountry.code]) * 100)
+      Math.round((areas[targetBreed.code] / areas[guessedBreed.code]) * 100)
     );
 
   const percentToDisplay =
@@ -80,10 +80,10 @@ export function GuessRow({
   }, [guess]);
 
   const handleClickOnEmptyRow = useCallback(() => {
-    if (countryInputRef?.current != null) {
-      countryInputRef?.current.focus();
+    if (breedInputRef?.current != null) {
+      breedInputRef?.current.focus();
     }
-  }, [countryInputRef]);
+  }, [breedInputRef]);
 
   switch (animationState) {
     case "NOT_STARTED":
@@ -132,10 +132,10 @@ export function GuessRow({
             {guess && formatDistance(guess.distance, distanceUnit)}
           </div> */}
           <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
-            {guess && targetCountry && (
+            {guess && targetBreed && (
               <Twemoji
                 className="flex items-center"
-                text={getResultEmoji(guess, targetCountry)}
+                text={getResultEmoji(guess, targetBreed)}
               />
             )}
           </div>

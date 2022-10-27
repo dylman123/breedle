@@ -1,5 +1,5 @@
 // Source: https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
-export const germanCountryNames: Record<string, string> = {
+export const germanBreedNames: Record<string, string> = {
   AF: "Afghanistan",
   EG: "Ägypten",
   AX: "Åland",

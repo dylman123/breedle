@@ -2,20 +2,20 @@ import { t } from "i18next";
 import React, { useState } from "react";
 import Autosuggest from "react-autosuggest";
 import { useTranslation } from "react-i18next";
-import { getCountryName, sanitizeCountryName } from "../domain/countries";
-import { countries } from "../domain/countries.position";
+import { getBreedName, sanitizeBreedName } from "../domain/breeds";
+import { breeds } from "../domain/breeds.position";
 
-interface CountryInputProps {
+interface BreedInputProps {
   inputRef: React.RefObject<HTMLInputElement>;
   currentGuess: string;
   setCurrentGuess: (guess: string) => void;
 }
 
-export function CountryInput({
+export function BreedInput({
   inputRef,
   currentGuess,
   setCurrentGuess,
-}: CountryInputProps) {
+}: BreedInputProps) {
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
   const { i18n } = useTranslation();
@@ -28,12 +28,10 @@ export function CountryInput({
       suggestions={suggestions}
       onSuggestionsFetchRequested={({ value }) =>
         setSuggestions(
-          countries
-            .map((c) => getCountryName(i18n.resolvedLanguage, c))
-            .filter((countryName) =>
-              sanitizeCountryName(countryName).includes(
-                sanitizeCountryName(value)
-              )
+          breeds
+            .map((c) => getBreedName(i18n.resolvedLanguage, c))
+            .filter((breedName) =>
+              sanitizeBreedName(breedName).includes(sanitizeBreedName(value))
             )
             .sort()
         )

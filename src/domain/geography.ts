@@ -1,4 +1,4 @@
-import { Country } from "./countries";
+import { Breed } from "./breeds";
 import { Guess } from "./guess";
 
 const MAX_DISTANCE_ON_EARTH = 20_000_000;
@@ -44,8 +44,8 @@ export function getDirectionEmoji(guess: Guess) {
   return guess.distance === 0 ? "🎉" : DIRECTION_ARROWS[guess.direction];
 }
 
-export function getResultEmoji(guess: Guess, targetCountry: Country) {
-  return guess.code === targetCountry.code ? "🦴" : "💩";
+export function getResultEmoji(guess: Guess, targetBreed: Breed) {
+  return guess.code === targetBreed.code ? "🦴" : "💩";
 }
 
 export function computeProximityPercent(distance: number): number {

@@ -7,8 +7,8 @@ import React, {
   useState,
 } from "react";
 import { toast } from "react-toastify";
-import { getCountryName, sanitizeCountryName } from "../domain/countries";
-import { CountryInput } from "./CountryInput";
+import { getBreedName, sanitizeBreedName } from "../domain/breeds";
+import { BreedInput } from "./BreedInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
@@ -17,7 +17,7 @@ import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { countries } from "../domain/countries.position";
+import { breeds } from "../domain/breeds.position";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
 const ENABLE_TWITCH_LINK = false;
@@ -37,13 +37,13 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   useNewsNotifications(dayString);
 
-  const countryInputRef = useRef<HTMLInputElement>(null);
+  const breedInputRef = useRef<HTMLInputElement>(null);
 
   const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
-  const { country, guesses } = todays;
-  const countryName = useMemo(
-    () => (country ? getCountryName(i18n.resolvedLanguage, country) : ""),
-    [country, i18n.resolvedLanguage]
+  const { breed, guesses } = todays;
+  const breedName = useMemo(
+    () => (breed ? getBreedName(i18n.resolvedLanguage, breed) : ""),
+    [breed, i18n.resolvedLanguage]
   );
 
   const [currentGuess, setCurrentGuess] = useState("");
@@ -60,35 +60,33 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const gameEnded =
     guesses.length === MAX_TRY_COUNT ||
-    guesses[guesses.length - 1]?.code === country?.code;
+    guesses[guesses.length - 1]?.code === breed?.code;
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      if (country == null) {
+      if (breed == null) {
         return;
       }
       e.preventDefault();
-      const guessedCountry = countries.find(
-        (country) =>
-          sanitizeCountryName(
-            getCountryName(i18n.resolvedLanguage, country)
-          ) === sanitizeCountryName(currentGuess)
+      const guessedBreed = breeds.find(
+        (breed) =>
+          sanitizeBreedName(getBreedName(i18n.resolvedLanguage, breed)) ===
+          sanitizeBreedName(currentGuess)
       );
 
-      if (guessedCountry == null) {
-        toast.error(t("unknownCountry"));
+      if (guessedBreed == null) {
+        toast.error(t("unknownBreed"));
         return;
       }
 
       const newGuess = {
         name: currentGuess,
         code:
-          countries.find((c) => c.name === currentGuess)?.code ??
-          "affenpinscher",
-        distance: geolib.getDistance(guessedCountry, country),
+          breeds.find((c) => c.name === currentGuess)?.code ?? "affenpinscher",
+        distance: geolib.getDistance(guessedBreed, breed),
         direction: geolib.getCompassDirection(
-          guessedCountry,
-          country,
+          guessedBreed,
+          breed,
           (origin, dest) =>
             Math.round(geolib.getRhumbLineBearing(origin, dest) / 45) * 45
         ),
@@ -97,23 +95,23 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       addGuess(newGuess);
       setCurrentGuess("");
 
-      if (guessedCountry === country) {
+      if (guessedBreed === breed) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
-    [addGuess, country, currentGuess, i18n.resolvedLanguage, t]
+    [addGuess, breed, currentGuess, i18n.resolvedLanguage, t]
   );
 
   useEffect(() => {
     let toastId: ReactText;
-    const { country, guesses } = todays;
+    const { breed, guesses } = todays;
     if (
-      country &&
+      breed &&
       guesses.length === MAX_TRY_COUNT &&
       guesses[guesses.length - 1].distance > 0
     ) {
       toastId = toast.info(
-        getCountryName(i18n.resolvedLanguage, country).toUpperCase(),
+        getBreedName(i18n.resolvedLanguage, breed).toUpperCase(),
         {
           autoClose: false,
           delay: 2000,
@@ -137,7 +135,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           onClick={() => setHideImageMode(false)}
         >
           <Twemoji
-            text={t("showCountry")}
+            text={t("showBreed")}
             options={{ className: "inline-block" }}
           />
         </button>
@@ -160,7 +158,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
           alt="dog breed to guess"
-          src={`images/countries/${country?.code}/image.jpg`}
+          src={`images/breeds/${breed?.code}/image.jpg`}
           style={
             rotationMode && !gameEnded
               ? {
@@ -195,14 +193,14 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         </button>
       )}
       <Guesses
-        targetCountry={country}
+        targetBreed={breed}
         rowCount={MAX_TRY_COUNT}
         guesses={guesses}
         settingsData={settingsData}
-        countryInputRef={countryInputRef}
+        breedInputRef={breedInputRef}
       />
       <div className="my-2">
-        {gameEnded && country ? (
+        {gameEnded && breed ? (
           <>
             <Share
               guesses={guesses}
@@ -210,12 +208,12 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               settingsData={settingsData}
               hideImageMode={hideImageMode}
               rotationMode={rotationMode}
-              country={country}
+              breed={breed}
             />
             <div className="flex flex-wrap gap-4 justify-center">
               {/* <a
                 className="underline text-center block mt-4 whitespace-nowrap"
-                href={`https://www.google.com/maps?q=${countryName}+${country.code.toUpperCase()}&hl=${
+                href={`https://www.google.com/maps?q=${breedName}+${breed.code.toUpperCase()}&hl=${
                   i18n.resolvedLanguage
                 }`}
                 target="_blank"
@@ -228,7 +226,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               </a> */}
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
-                href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${countryName}`}
+                href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${breedName}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -274,8 +272,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         ) : (
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col">
-              <CountryInput
-                inputRef={countryInputRef}
+              <BreedInput
+                inputRef={breedInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
               />

@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 // import { InfosJa } from "./components/panels/InfosJa";
 import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
-import { Worldle } from "./components/Worldle";
+import { Breedle } from "./components/Breedle";
 import { Stats } from "./components/panels/Stats";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { getDayString, useTodays } from "./hooks/useTodays";
@@ -26,7 +26,7 @@ export default function App() {
   const { t, i18n } = useTranslation();
 
   const dayString = useMemo(getDayString, []);
-  const [{ country }] = useTodays(dayString);
+  const [{ breed }] = useTodays(dayString);
 
   const [infoOpen, setInfoOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -131,15 +131,15 @@ export default function App() {
               text="❤️"
               className="flex items-center justify-center mr-1"
             />{" "}
-            <Worldle />? -
-            {country && supportLink[country.code] != null ? (
+            <Breedle />? -
+            {breed && supportLink[breed.code] != null ? (
               <a
                 className="underline pl-1"
-                href={supportLink[country.code]}
+                href={supportLink[breed.code]}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="w-max">{t(`support.${country.code}`)}</div>
+                <div className="w-max">{t(`support.${breed.code}`)}</div>
               </a>
             ) : (
               <a

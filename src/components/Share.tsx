@@ -10,7 +10,7 @@ import {
   getResultEmoji,
 } from "../domain/geography";
 import { Guess } from "../domain/guess";
-import { Country } from "../domain/countries";
+import { Breed } from "../domain/breeds";
 import React from "react";
 import { SettingsData } from "../hooks/useSettings";
 
@@ -22,7 +22,7 @@ interface ShareProps {
   settingsData: SettingsData;
   hideImageMode: boolean;
   rotationMode: boolean;
-  country: Country;
+  breed: Breed;
 }
 
 export function Share({
@@ -31,7 +31,7 @@ export function Share({
   settingsData,
   hideImageMode,
   rotationMode,
-  country,
+  breed,
 }: ShareProps) {
   const { t } = useTranslation();
   const { theme } = settingsData;
@@ -60,13 +60,13 @@ export function Share({
       .map((guess) => {
         // const percent = computeProximityPercent(guess.distance);
         // const squares = generateSquareCharacters(percent, theme).join("");
-        const result = getResultEmoji(guess, country);
+        const result = getResultEmoji(guess, breed);
         return `${result}`;
       })
       .join("");
 
     return [title, guessString, "https://breedle.com.au"].join("\n");
-  }, [dayString, guesses, hideImageMode, rotationMode, country]);
+  }, [dayString, guesses, hideImageMode, rotationMode, breed]);
 
   return (
     <CopyToClipboard

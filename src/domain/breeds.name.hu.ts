@@ -1,5 +1,5 @@
 // Source: https://hu.wikipedia.org/wiki/ISO_3166-1
-export const hungarianCountryNames: Record<string, string> = {
+export const hungarianBreedNames: Record<string, string> = {
   AF: "Afganisztán",
   AX: "Åland",
   AL: "Albánia",
@@ -252,7 +252,7 @@ export const hungarianCountryNames: Record<string, string> = {
   ZW: "Zimbabwe",
   CV: "Zöld-foki Köztársaság",
 
-  // Country codes not part of ISO-3166-1 (reserved, deleted or unassigned):
+  // Breed codes not part of ISO-3166-1 (reserved, deleted or unassigned):
   AN: "Holland Antillák",
   GZ: "Gázai övezet",
 };

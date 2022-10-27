@@ -2,16 +2,16 @@ import { DateTime } from "luxon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import seedrandom from "seedrandom";
 import {
-  bigEnoughCountriesWithImage,
-  countriesWithImage,
-  Country,
-  smallCountryLimit,
-} from "../domain/countries";
-import { areas } from "../domain/countries.area";
-import { CountryCode } from "../domain/countries.position";
+  bigEnoughBreedsWithImage,
+  breedsWithImage,
+  Breed,
+  smallBreedLimit,
+} from "../domain/breeds";
+import { areas } from "../domain/breeds.area";
+import { BreedCode } from "../domain/breeds.position";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
-const forcedCountries: Record<string, CountryCode> = {
+const forcedBreeds: Record<string, BreedCode> = {
   // "2022-02-02": "affenpinscher",
   // "2022-02-03": "affenpinscher",
   // "2022-03-21": "affenpinscher",
@@ -28,95 +28,6 @@ const forcedCountries: Record<string, CountryCode> = {
   // "2022-04-01": "affenpinscher",
   // "2022-04-02": "affenpinscher",
   // "2022-04-03": "affenpinscher",
-  // "2022-04-04": "affenpinscher",
-  // "2022-04-05": "affenpinscher",
-  // "2022-04-06": "affenpinscher",
-  // "2022-04-07": "affenpinscher",
-  // "2022-04-08": "affenpinscher",
-  // "2022-04-09": "affenpinscher",
-  // "2022-04-10": "affenpinscher",
-  // "2022-04-11": "affenpinscher",
-  // "2022-04-12": "affenpinscher",
-  // "2022-04-13": "affenpinscher",
-  // "2022-04-14": "affenpinscher",
-  // "2022-04-15": "affenpinscher",
-  // "2022-04-16": "affenpinscher",
-  // "2022-04-17": "affenpinscher",
-  // "2022-04-18": "affenpinscher",
-  // "2022-04-19": "affenpinscher",
-  // "2022-04-20": "affenpinscher",
-  // "2022-04-21": "affenpinscher",
-  // "2022-04-22": "affenpinscher",
-  // "2022-04-23": "affenpinscher",
-  // "2022-04-24": "affenpinscher",
-  // "2022-04-25": "affenpinscher",
-  // "2022-04-26": "affenpinscher",
-  // "2022-04-27": "affenpinscher",
-  // "2022-04-28": "affenpinscher",
-  // "2022-04-29": "affenpinscher",
-  // "2022-04-30": "affenpinscher",
-  // "2022-05-01": "affenpinscher",
-  // "2022-05-02": "affenpinscher",
-  // "2022-05-03": "affenpinscher",
-  // "2022-05-04": "affenpinscher",
-  // "2022-05-05": "affenpinscher",
-  // "2022-05-06": "affenpinscher",
-  // "2022-05-07": "affenpinscher",
-  // "2022-05-08": "affenpinscher",
-  // "2022-05-09": "affenpinscher",
-  // "2022-05-10": "affenpinscher",
-  // "2022-05-11": "affenpinscher",
-  // "2022-05-12": "affenpinscher",
-  // "2022-05-13": "affenpinscher",
-  // "2022-05-14": "affenpinscher",
-  // "2022-05-15": "affenpinscher",
-  // "2022-05-16": "affenpinscher",
-  // "2022-05-17": "affenpinscher",
-  // "2022-05-18": "affenpinscher",
-  // "2022-05-19": "affenpinscher",
-  // "2022-05-20": "affenpinscher",
-  // "2022-05-21": "affenpinscher",
-  // "2022-05-22": "affenpinscher",
-  // "2022-05-23": "affenpinscher",
-  // "2022-05-24": "affenpinscher",
-  // "2022-05-25": "affenpinscher",
-  // "2022-05-26": "affenpinscher",
-  // "2022-05-27": "affenpinscher",
-  // "2022-05-28": "affenpinscher",
-  // "2022-05-29": "affenpinscher",
-  // "2022-05-30": "affenpinscher",
-  // "2022-05-31": "affenpinscher",
-  // "2022-06-01": "affenpinscher",
-  // "2022-06-02": "affenpinscher",
-  // "2022-06-03": "affenpinscher",
-  // "2022-06-04": "affenpinscher",
-  // "2022-06-05": "affenpinscher",
-  // "2022-06-06": "affenpinscher",
-  // "2022-06-07": "affenpinscher",
-  // "2022-06-08": "affenpinscher",
-  // "2022-06-09": "affenpinscher",
-  // "2022-06-10": "affenpinscher",
-  // "2022-06-11": "affenpinscher",
-  // "2022-06-12": "affenpinscher",
-  // "2022-06-13": "affenpinscher",
-  // "2022-06-14": "affenpinscher",
-  // "2022-06-15": "affenpinscher",
-  // "2022-06-16": "affenpinscher",
-  // "2022-06-17": "affenpinscher",
-  // "2022-06-18": "affenpinscher",
-  // "2022-06-19": "affenpinscher",
-  // "2022-06-20": "affenpinscher",
-  // "2022-06-21": "affenpinscher",
-  // "2022-06-22": "affenpinscher",
-  // "2022-06-23": "affenpinscher",
-  // "2022-06-24": "affenpinscher",
-  // "2022-06-25": "affenpinscher",
-  // "2022-06-26": "affenpinscher",
-  // "2022-06-27": "affenpinscher",
-  // "2022-06-28": "affenpinscher",
-  // "2022-06-29": "affenpinscher",
-  // "2022-06-30": "affenpinscher",
-  // "2022-07-01": "affenpinscher",
 };
 
 const noRepeatStartDate = DateTime.fromFormat("2022-05-01", "yyyy-MM-dd");
@@ -129,7 +40,7 @@ export function getDayString(shiftDayCount?: number) {
 
 export function useTodays(dayString: string): [
   {
-    country?: Country;
+    breed?: Breed;
     guesses: Guess[];
   },
   (guess: Guess) => void,
@@ -137,7 +48,7 @@ export function useTodays(dayString: string): [
   number
 ] {
   const [todays, setTodays] = useState<{
-    country?: Country;
+    breed?: Breed;
     guesses: Guess[];
   }>({ guesses: [] });
 
@@ -149,7 +60,7 @@ export function useTodays(dayString: string): [
 
       const newGuesses = [...todays.guesses, newGuess];
 
-      setTodays((prev) => ({ country: prev.country, guesses: newGuesses }));
+      setTodays((prev) => ({ breed: prev.breed, guesses: newGuesses }));
       saveGuesses(dayString, newGuesses);
     },
     [dayString, todays]
@@ -157,9 +68,9 @@ export function useTodays(dayString: string): [
 
   useEffect(() => {
     const guesses = loadAllGuesses()[dayString] ?? [];
-    const country = getCountry(dayString);
+    const breed = getBreed(dayString);
 
-    setTodays({ country, guesses });
+    setTodays({ breed, guesses });
   }, [dayString]);
 
   const randomAngle = useMemo(
@@ -176,70 +87,66 @@ export function useTodays(dayString: string): [
   return [todays, addGuess, randomAngle, imageScale];
 }
 
-function getCountry(dayString: string) {
+function getBreed(dayString: string) {
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
   let pickingDate = DateTime.fromFormat("2022-03-21", "yyyy-MM-dd");
-  let smallCountryCooldown = 0;
-  let pickedCountry: Country | null = null;
+  let smallBreedCooldown = 0;
+  let pickedBreed: Breed | null = null;
 
   const lastPickDates: Record<string, DateTime> = {};
 
   do {
-    smallCountryCooldown--;
+    smallBreedCooldown--;
 
     const pickingDateString = pickingDate.toFormat("yyyy-MM-dd");
 
-    const forcedCountryCode = forcedCountries[dayString];
-    const forcedCountry =
-      forcedCountryCode != null
-        ? countriesWithImage.find(
-            (country) => country.code === forcedCountryCode
-          )
+    const forcedBreedCode = forcedBreeds[dayString];
+    const forcedBreed =
+      forcedBreedCode != null
+        ? breedsWithImage.find((breed) => breed.code === forcedBreedCode)
         : undefined;
 
-    const countrySelection =
-      smallCountryCooldown < 0
-        ? countriesWithImage
-        : bigEnoughCountriesWithImage;
+    const breedSelection =
+      smallBreedCooldown < 0 ? breedsWithImage : bigEnoughBreedsWithImage;
 
-    if (forcedCountry != null) {
-      pickedCountry = forcedCountry;
+    if (forcedBreed != null) {
+      pickedBreed = forcedBreed;
     } else {
-      let countryIndex = Math.floor(
-        seedrandom.alea(pickingDateString)() * countrySelection.length
+      let breedIndex = Math.floor(
+        seedrandom.alea(pickingDateString)() * breedSelection.length
       );
-      // console.log({ countryIndex, countrySelection });
-      pickedCountry = countrySelection[countryIndex];
+      // console.log({ breedIndex, breedSelection });
+      pickedBreed = breedSelection[breedIndex];
 
       if (pickingDate >= noRepeatStartDate) {
-        while (isARepeat(pickedCountry, lastPickDates, pickingDate)) {
-          countryIndex = (countryIndex + 1) % countrySelection.length;
-          pickedCountry = countrySelection[countryIndex];
+        while (isARepeat(pickedBreed, lastPickDates, pickingDate)) {
+          breedIndex = (breedIndex + 1) % breedSelection.length;
+          pickedBreed = breedSelection[breedIndex];
         }
       }
     }
 
-    if (areas[pickedCountry.code] < smallCountryLimit) {
-      smallCountryCooldown = 7;
+    if (areas[pickedBreed.code] < smallBreedLimit) {
+      smallBreedCooldown = 7;
     }
 
-    lastPickDates[pickedCountry.code] = pickingDate;
+    lastPickDates[pickedBreed.code] = pickingDate;
     pickingDate = pickingDate.plus({ day: 1 });
   } while (pickingDate <= currentDayDate);
 
-  return pickedCountry;
+  return pickedBreed;
 }
 
 function isARepeat(
-  pickedCountry: Country | null,
+  pickedBreed: Breed | null,
   lastPickDates: Record<string, DateTime>,
   pickingDate: DateTime
 ) {
-  if (pickedCountry == null || lastPickDates[pickedCountry.code] == null) {
+  if (pickedBreed == null || lastPickDates[pickedBreed.code] == null) {
     return false;
   }
   const daysSinceLastPick = pickingDate.diff(
-    lastPickDates[pickedCountry.code],
+    lastPickDates[pickedBreed.code],
     "day"
   ).days;
 
