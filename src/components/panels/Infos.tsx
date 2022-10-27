@@ -17,7 +17,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
     <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Breedle /> in 6 guesses.
+          Guess the <Breedle /> in 6 guesses to get the bone and avoid the poop.
         </div>
         <div>Each guess must be a valid dog breed.</div>
         <div>
