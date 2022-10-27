@@ -107,8 +107,8 @@ export default function App() {
             >
               <Twemoji text="❓" />
             </button>
-            <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              <span className="text-yellow-300">Breed</span>le
+            <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto flex justify-center">
+              <Breedle />
             </h1>
             <button
               className="ml-3 text-xl"
