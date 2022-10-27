@@ -213,7 +213,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               country={country}
             />
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
+              {/* <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href={`https://www.google.com/maps?q=${countryName}+${country.code.toUpperCase()}&hl=${
                   i18n.resolvedLanguage
@@ -225,7 +225,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                   text={t("showOnGoogleMaps")}
                   options={{ className: "inline-block" }}
                 />
-              </a>
+              </a> */}
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${countryName}`}
@@ -238,7 +238,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 />
               </a>
             </div>
-            {ENABLE_TWITCH_LINK && (
+            {/* {ENABLE_TWITCH_LINK && (
               <div className="flex flex-wrap gap-4 justify-center">
                 <a
                   className="underline text-center block mt-4 whitespace-nowrap"
@@ -252,8 +252,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                   />
                 </a>
               </div>
-            )}
-            <div className="flex flex-wrap gap-4 justify-center">
+            )} */}
+            {/* <div className="flex flex-wrap gap-4 justify-center">
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href="https://emovi.teuteuf.fr/"
@@ -269,7 +269,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                   options={{ className: "inline-block" }}
                 />
               </a>
-            </div>
+            </div> */}
           </>
         ) : (
           <form onSubmit={handleSubmit}>
