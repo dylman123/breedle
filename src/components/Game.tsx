@@ -17,7 +17,7 @@ import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { breeds } from "../domain/breeds.position";
+import { breeds } from "../domain/breeds.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
 const ENABLE_TWITCH_LINK = false;
@@ -45,6 +45,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     () => (breed ? getBreedName(i18n.resolvedLanguage, breed) : ""),
     [breed, i18n.resolvedLanguage]
   );
+
+  // console.log({ breed });
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(
@@ -158,7 +160,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
           alt="dog breed to guess"
-          src={`images/breeds/${breed?.code}/image.jpg`}
+          src={`images/breeds/${breed?.image}.jpg`}
           style={
             rotationMode && !gameEnded
               ? {

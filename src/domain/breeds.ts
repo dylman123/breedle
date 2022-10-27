@@ -4,7 +4,7 @@
 // Breed area => https://github.com/samayo/breed-json/blob/master/src/breed-by-surface-area.json
 
 import { areas } from "./breeds.area";
-import { breeds } from "./breeds.position";
+import { breeds } from "./breeds.mapping";
 import { corsicanBreedNames } from "./breeds.name.co";
 import { frenchBreedNames } from "./breeds.name.fr";
 import { hungarianBreedNames } from "./breeds.name.hu";
@@ -19,6 +19,7 @@ export interface Breed {
   latitude: number;
   longitude: number;
   name: string;
+  image: number;
 }
 
 export const breedsWithImage = breeds.filter((c) =>

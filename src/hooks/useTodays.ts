@@ -8,7 +8,7 @@ import {
   smallBreedLimit,
 } from "../domain/breeds";
 import { areas } from "../domain/breeds.area";
-import { BreedCode } from "../domain/breeds.position";
+import { BreedCode } from "../domain/breeds.mapping";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
 const forcedBreeds: Record<string, BreedCode> = {

@@ -4,24 +4,28 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Affenpinscher",
+    image: 1,
   },
   {
     code: "afghan_hound",
     latitude: 0.0,
     longitude: 0.0,
     name: "Afghan Hound",
+    image: 2,
   },
   {
     code: "airedale_terrier",
     latitude: 0.0,
     longitude: 0.0,
     name: "Airedale Terrier",
+    image: 4,
   },
   {
     code: "akita",
     latitude: 0.0,
     longitude: 0.0,
     name: "Akita",
+    image: 11,
     variants: [
       {
         key: "japanese",
@@ -34,12 +38,14 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Alaskan Malamute",
+    image: 14,
   },
   {
     code: "american_hairless_terrier",
     latitude: 0.0,
     longitude: 0.0,
     name: "American Hairless Terrier",
+    image: 31,
   },
   {
     code: "american_staffordshire_terrier",
@@ -380,10 +386,12 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Cocker Spaniel",
+    image: 323,
     variants: [
       {
         key: "american",
         label: "American",
+        image: 23,
       },
     ],
   },

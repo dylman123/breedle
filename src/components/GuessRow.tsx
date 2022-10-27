@@ -12,7 +12,7 @@ import { SettingsData } from "../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { Breed, getBreedName, sanitizeBreedName } from "../domain/breeds";
 import { areas } from "../domain/breeds.area";
-import { breeds } from "../domain/breeds.position";
+import { breeds } from "../domain/breeds.mapping";
 import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;

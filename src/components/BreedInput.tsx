@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Autosuggest from "react-autosuggest";
 import { useTranslation } from "react-i18next";
 import { getBreedName, sanitizeBreedName } from "../domain/breeds";
-import { breeds } from "../domain/breeds.position";
+import { breeds } from "../domain/breeds.mapping";
 
 interface BreedInputProps {
   inputRef: React.RefObject<HTMLInputElement>;
