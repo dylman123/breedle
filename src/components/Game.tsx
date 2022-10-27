@@ -210,6 +210,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               settingsData={settingsData}
               hideImageMode={hideImageMode}
               rotationMode={rotationMode}
+              country={country}
             />
             <div className="flex flex-wrap gap-4 justify-center">
               <a

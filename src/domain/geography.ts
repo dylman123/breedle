@@ -45,7 +45,7 @@ export function getDirectionEmoji(guess: Guess) {
 }
 
 export function getResultEmoji(guess: Guess, targetCountry: Country) {
-  return guess.code === targetCountry.code ? "🦴" : "🐕💩";
+  return guess.code === targetCountry.code ? "🦴" : "💩";
 }
 
 export function computeProximityPercent(distance: number): number {

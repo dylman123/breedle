@@ -7,8 +7,10 @@ import {
   computeProximityPercent,
   generateSquareCharacters,
   getDirectionEmoji,
+  getResultEmoji,
 } from "../domain/geography";
 import { Guess } from "../domain/guess";
+import { Country } from "../domain/countries";
 import React from "react";
 import { SettingsData } from "../hooks/useSettings";
 
@@ -20,6 +22,7 @@ interface ShareProps {
   settingsData: SettingsData;
   hideImageMode: boolean;
   rotationMode: boolean;
+  country: Country;
 }
 
 export function Share({
@@ -28,6 +31,7 @@ export function Share({
   settingsData,
   hideImageMode,
   rotationMode,
+  country,
 }: ShareProps) {
   const { t } = useTranslation();
   const { theme } = settingsData;
@@ -49,19 +53,20 @@ export function Share({
     const bestPercent = `(${computeProximityPercent(
       bestDistance
     ).toString()}%)`;
-    const title = `#Worldle #${dayCount} ${guessCount}/6 ${bestPercent}${difficultyModifierEmoji}`;
+    // const title = `#Breedle #${dayCount} ${guessCount}/6 ${bestPercent}${difficultyModifierEmoji}`;
+    const title = `Breedle #${dayCount} ${guessCount}/6`;
 
     const guessString = guesses
       .map((guess) => {
-        const percent = computeProximityPercent(guess.distance);
-        const squares = generateSquareCharacters(percent, theme).join("");
-        const direction = getDirectionEmoji(guess);
-        return `${squares}${direction}`;
+        // const percent = computeProximityPercent(guess.distance);
+        // const squares = generateSquareCharacters(percent, theme).join("");
+        const result = getResultEmoji(guess, country);
+        return `${result}`;
       })
-      .join("\n");
+      .join("");
 
-    return [title, guessString, "https://worldle.teuteuf.fr"].join("\n");
-  }, [dayString, guesses, hideImageMode, rotationMode, theme]);
+    return [title, guessString, "https://breedle.com.au"].join("\n");
+  }, [dayString, guesses, hideImageMode, rotationMode, country]);
 
   return (
     <CopyToClipboard
