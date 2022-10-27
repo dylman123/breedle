@@ -22,8 +22,18 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         <div>Each guess must be a valid dog breed.</div>
         <div>
           After each guess, you will be given feedback on whether you were
-          correct or incorrect.
+          correct or incorrect with the following emojis.
         </div>
+        <ul>
+          <li>
+            Incorrect:
+            <Twemoji text="💩" options={{ className: "inline-block" }} />
+          </li>
+          <li>
+            Correct:
+            <Twemoji text="🦴" options={{ className: "inline-block" }} />
+          </li>
+        </ul>
       </div>
       {/* <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Examples</div>
