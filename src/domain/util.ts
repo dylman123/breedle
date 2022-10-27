@@ -40,12 +40,12 @@ const DIRECTION_ARROWS: Record<Direction, string> = {
   NNW: "↖️",
 };
 
-export function getDirectionEmoji(guess: Guess) {
-  return guess.distance === 0 ? "🎉" : DIRECTION_ARROWS[guess.direction];
-}
-
 export function getResultEmoji(guess: Guess, targetBreed: Breed) {
   return guess.code === targetBreed.code ? "🦴" : "💩";
+}
+
+export function getDirectionEmoji(guess: Guess) {
+  return guess.distance === 0 ? "🎉" : DIRECTION_ARROWS[guess.direction];
 }
 
 export function computeProximityPercent(distance: number): number {

@@ -8,7 +8,7 @@ import {
   generateSquareCharacters,
   getDirectionEmoji,
   getResultEmoji,
-} from "../domain/geography";
+} from "../domain/util";
 import { Guess } from "../domain/guess";
 import { Breed } from "../domain/breeds";
 import React from "react";

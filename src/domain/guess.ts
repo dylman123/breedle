@@ -1,4 +1,4 @@
-import { Direction } from "./geography";
+import { Direction } from "./util";
 
 export interface Guess {
   name: string;

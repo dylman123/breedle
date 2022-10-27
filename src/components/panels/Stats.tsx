@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { formatDistance } from "../../domain/geography";
+import { formatDistance } from "../../domain/util";
 import { getStatsData } from "../../domain/stats";
 import { Panel } from "./Panel";
 

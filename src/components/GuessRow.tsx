@@ -4,7 +4,7 @@ import {
   generateSquareCharacters,
   getDirectionEmoji,
   getResultEmoji,
-} from "../domain/geography";
+} from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
 import CountUp from "react-countup";
