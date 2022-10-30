@@ -1127,7 +1127,8 @@ export const breeds = [
     variants: [
       {
         key: "phalene",
-        label: "Phal\u00e8ne",
+        label: "Phalene",
+        image: 106,
       },
     ],
   },
@@ -1171,36 +1172,42 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Petit Basset Griffon Vendeen",
+    image: 441,
   },
   {
     code: "pharaoh_hound",
     latitude: 0.0,
     longitude: 0.0,
     name: "Pharaoh Hound",
+    image: 107,
   },
   {
     code: "pointer",
     latitude: 0.0,
     longitude: 0.0,
     name: "Pointer",
+    image: 117,
   },
   {
     code: "polish_lowland_sheepdog",
     latitude: 0.0,
     longitude: 0.0,
     name: "Polish Lowland Sheepdog",
+    image: 126,
   },
   {
     code: "pomeranian",
     latitude: 0.0,
     longitude: 0.0,
     name: "Pomeranian",
+    image: 128,
   },
   {
     code: "poodle",
     latitude: 0.0,
     longitude: 0.0,
     name: "Poodle",
+    image: 130,
     variants: [
       {
         key: "miniature",
@@ -1221,6 +1228,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Portuguese Podengo",
+    image: 137,
     variants: [
       {
         key: "large_smooth_haired",
@@ -1253,24 +1261,28 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Portuguese Water Dog",
+    image: 139,
   },
   {
     code: "pug",
     latitude: 0.0,
     longitude: 0.0,
     name: "Pug",
+    image: 148,
   },
   {
     code: "puli",
     latitude: 0.0,
     longitude: 0.0,
     name: "Puli",
+    image: 149,
   },
   {
     code: "pumi",
     latitude: 0.0,
     longitude: 0.0,
     name: "Pumi",
+    image: 150,
   },
   {
     code: "pyrenean_mastiff",
