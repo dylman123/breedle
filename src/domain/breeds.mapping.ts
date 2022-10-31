@@ -1546,6 +1546,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Weimaraner",
+    image: 29,
     variants: [
       {
         key: "long-haired",
@@ -1558,14 +1559,17 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Welsh Corgi",
+    image: 30,
     variants: [
       {
         key: "cardigan",
         label: "Cardigan",
+        image: 30,
       },
       {
         key: "pembroke",
         label: "Pembroke",
+        image: 36,
       },
     ],
   },
@@ -1574,42 +1578,49 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Welsh Springer Spaniel",
+    image: 38,
   },
   {
     code: "welsh_terrier",
     latitude: 0.0,
     longitude: 0.0,
     name: "Welsh Terrier",
+    image: 39,
   },
   {
     code: "west_highland_white_terrier",
     latitude: 0.0,
     longitude: 0.0,
     name: "West Highland White Terrier",
+    image: 40,
   },
   {
     code: "whippet",
     latitude: 0.0,
     longitude: 0.0,
     name: "Whippet",
+    image: 49,
   },
   {
     code: "white_swiss_shepherd_dog",
     latitude: 0.0,
     longitude: 0.0,
     name: "White Swiss Shepherd Dog",
+    image: 50,
   },
   {
     code: "wirehaired_slovakian_pointer",
     latitude: 0.0,
     longitude: 0.0,
     name: "Wirehaired Slovakian Pointer",
+    image: 95,
   },
   {
     code: "xoloitzcuintle",
     latitude: 0.0,
     longitude: 0.0,
     name: "Xoloitzcuintle",
+    image: 163,
     variants: [
       {
         key: "intermediate",
