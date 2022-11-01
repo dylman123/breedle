@@ -686,6 +686,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "German Hunting Terrier",
+    image: 230,
   },
   {
     code: "german_pinscher",
@@ -1296,6 +1297,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Pyrenean Mountain Dog",
+    image: 268,
   },
   {
     code: "pyrenean_sheepdog_longhaired",
