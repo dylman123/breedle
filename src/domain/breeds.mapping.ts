@@ -263,7 +263,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Boston Terrier",
-    image: 365
+    image: 365,
   },
   {
     code: "bouvier_des_flandres",
@@ -521,6 +521,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Dachshund Kaninchen",
+    image: 451,
     variants: [
       {
         key: "long_haired",
@@ -825,6 +826,7 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Hungarian Wirehaired Vizsla",
+    image: 452,
   },
   {
     code: "ibizan_hound",
@@ -1643,12 +1645,14 @@ export const breeds = [
     latitude: 0.0,
     longitude: 0.0,
     name: "Yakutian Laika",
+    image: 453,
   },
   {
     code: "yorkshire_terrier",
     latitude: 0.0,
     longitude: 0.0,
     name: "Yorkshire Terrier",
+    image: 454,
   },
 ] as const;
 
