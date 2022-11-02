@@ -18,6 +18,8 @@ import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { breeds } from "../domain/breeds.mapping";
+import { originNames } from "../domain/origins.mapping";
+import { groupNames } from "../domain/groups.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
 const ENABLE_TWITCH_LINK = false;
@@ -47,6 +49,16 @@ export function Game({ settingsData, updateSettings }: GameProps) {
   );
 
   // console.log({ breed });
+
+  const groupName = breed ? groupNames[breed.group] : null;
+
+  const originName = !breed
+    ? null
+    : Array.isArray(breed.origin)
+    ? breed?.origin.map((o) => originNames[o])
+    : typeof breed.origin === "string"
+    ? originNames[breed.origin]
+    : null;
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(
@@ -181,6 +193,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             <Twemoji text="↩️" className="text-xl" />
           </button>
         )}
+      </div>
+      <div className="text-yellow-200">
+        {groupName}
+        {originName}
       </div>
       {rotationMode && !hideImageMode && !gameEnded && (
         <button
