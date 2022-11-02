@@ -5,14 +5,15 @@
 
 import { areas } from "./breeds.area";
 import { breeds } from "./breeds.mapping";
-import { corsicanBreedNames } from "./breeds.name.co";
-import { frenchBreedNames } from "./breeds.name.fr";
-import { hungarianBreedNames } from "./breeds.name.hu";
-import { dutchBreedNames } from "./breeds.name.nl";
-import { polishBreedNames } from "./breeds.name.pl";
-import { germanBreedNames } from "./breeds.name.de";
 import { breedCodesWithImage } from "./breeds.image";
-import { japaneseBreedNames } from "./breeds.name.ja";
+
+// import { corsicanBreedNames } from "./breeds.name.co";
+// import { frenchBreedNames } from "./breeds.name.fr";
+// import { hungarianBreedNames } from "./breeds.name.hu";
+// import { dutchBreedNames } from "./breeds.name.nl";
+// import { polishBreedNames } from "./breeds.name.pl";
+// import { germanBreedNames } from "./breeds.name.de";
+// import { japaneseBreedNames } from "./breeds.name.ja";
 
 export interface Breed {
   code: string;
@@ -35,20 +36,20 @@ export const bigEnoughBreedsWithImage = breedsWithImage.filter(
 
 export function getBreedName(language: string, breed: Breed) {
   switch (language) {
-    case "co":
-      return corsicanBreedNames[breed.code];
-    case "fr":
-      return frenchBreedNames[breed.code];
-    case "hu":
-      return hungarianBreedNames[breed.code];
-    case "nl":
-      return dutchBreedNames[breed.code];
-    case "pl":
-      return polishBreedNames[breed.code];
-    case "de":
-      return germanBreedNames[breed.code];
-    case "ja":
-      return japaneseBreedNames[breed.code];
+    // case "co":
+    //   return corsicanBreedNames[breed.code];
+    // case "fr":
+    //   return frenchBreedNames[breed.code];
+    // case "hu":
+    //   return hungarianBreedNames[breed.code];
+    // case "nl":
+    //   return dutchBreedNames[breed.code];
+    // case "pl":
+    //   return polishBreedNames[breed.code];
+    // case "de":
+    //   return germanBreedNames[breed.code];
+    // case "ja":
+    //   return japaneseBreedNames[breed.code];
     default:
       return breed.name;
   }
