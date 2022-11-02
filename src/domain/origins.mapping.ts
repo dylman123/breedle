@@ -1,4 +1,5 @@
 export const originNames: Record<string, string> = {
+  afghanistan: "Afghanistan",
   argentina: "Argentina",
   australia: "Australia",
   austria: "Austria",
