@@ -20,6 +20,7 @@ export interface Breed {
   longitude: number;
   name: string;
   image: number;
+  group: number;
 }
 
 export const breedsWithImage = breeds.filter((c) =>

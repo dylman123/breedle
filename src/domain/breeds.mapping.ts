@@ -1262,6 +1262,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Norwich Terrier",
     image: 168,
+    group: 2,
   },
   {
     code: "nova_scotia_duck_tolling_retriever",
@@ -1478,6 +1479,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pumi",
     image: 150,
+    group: 5,
   },
   {
     code: "pyrenean_mastiff",
