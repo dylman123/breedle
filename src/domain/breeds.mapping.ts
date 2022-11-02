@@ -13,6 +13,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Afghan Hound",
     image: 2,
+    group: 4,
   },
   {
     code: "airedale_terrier",
@@ -115,6 +116,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Azawakh",
     image: 422,
+    group: 4,
   },
   {
     code: "basenji",
@@ -122,6 +124,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Basenji",
     image: 425,
+    group: 4,
   },
   {
     code: "basset_fauve_de_bretagne",
@@ -129,6 +132,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Basset Fauve de Bretagne",
     image: 434,
+    group: 4,
   },
   {
     code: "basset_hound",
@@ -136,6 +140,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Basset Hound",
     image: 442,
+    group: 4,
   },
   {
     code: "beagle",
@@ -143,6 +148,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Beagle",
     image: 407,
+    group: 4,
   },
   {
     code: "bearded_collie",
@@ -223,6 +229,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Black and Tan Coonhound",
     image: 438,
+    group: 4,
   },
   {
     code: "bloodhound",
@@ -230,6 +237,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bloodhound",
     image: 450,
+    group: 4,
   },
   {
     code: "bluetick_coonhound",
@@ -237,6 +245,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bluetick Coonhound",
     image: 352,
+    group: 4,
   },
   {
     code: "bolognese",
@@ -267,6 +276,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Borzoi",
     image: 363,
+    group: 4,
   },
   {
     code: "boston_terrier",
@@ -295,6 +305,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bracco Italiano",
     image: 375,
+    group: 3,
   },
   {
     code: "briard",
@@ -316,6 +327,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Brittany",
     image: 394,
+    group: 3,
   },
   {
     code: "bull_terrier",
@@ -405,6 +417,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Chesapeake Bay Retriever",
     image: 400,
+    group: 3,
   },
   {
     code: "chihuahua",
@@ -447,6 +460,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Cirneco Dell'Etna",
     image: 327,
+    group: 4,
   },
   {
     code: "clumber_spaniel",
@@ -454,6 +468,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Clumber Spaniel",
     image: 328,
+    group: 3,
   },
   {
     code: "cocker_spaniel",
@@ -461,11 +476,13 @@ export const breeds = [
     longitude: 0.0,
     name: "Cocker Spaniel",
     image: 323,
+    group: 3,
     variants: [
       {
         key: "american",
         label: "American",
         image: 23,
+        group: 3,
       },
     ],
   },
@@ -502,6 +519,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Curly Coated Retriever",
     image: 339,
+    group: 3,
   },
   {
     code: "dachshund",
@@ -509,30 +527,37 @@ export const breeds = [
     longitude: 0.0,
     name: "Dachshund",
     image: 347,
+    group: 4,
     variants: [
       {
         key: "long_haired",
         label: "Long Haired",
+        group: 4,
       },
       {
         key: "miniature_long_haired",
         label: "Miniature Long Haired",
+        group: 4,
       },
       {
         key: "miniature_smooth_haired",
         label: "Miniature Smooth Haired",
+        group: 4,
       },
       {
         key: "miniature_wire_haired",
         label: "Miniature Wire Haired",
+        group: 4,
       },
       {
         key: "smooth_haired",
         label: "Smooth Haired",
+        group: 4,
       },
       {
         key: "wire_haired",
         label: "Wire Haired",
+        group: 4,
       },
     ],
   },
@@ -542,18 +567,22 @@ export const breeds = [
     longitude: 0.0,
     name: "Dachshund Kaninchen",
     image: 451,
+    group: 4,
     variants: [
       {
         key: "long_haired",
         label: "Long Haired",
+        group: 4,
       },
       {
         key: "smooth_haired",
         label: "Smooth Haired",
+        group: 4,
       },
       {
         key: "wire_haired",
         label: "Wire Haired",
+        group: 4,
       },
     ],
   },
@@ -578,6 +607,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Deerhound",
     image: 62,
+    group: 4,
   },
   {
     code: "dobermann",
@@ -606,6 +636,7 @@ export const breeds = [
     longitude: 0.0,
     name: "English Setter",
     image: 332,
+    group: 3,
   },
   {
     code: "english_springer_spaniel",
@@ -613,6 +644,7 @@ export const breeds = [
     longitude: 0.0,
     name: "English Springer Spaniel",
     image: 334,
+    group: 3,
   },
   {
     code: "english_toy_terrier",
@@ -650,6 +682,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Field Spaniel",
     image: 251,
+    group: 3,
   },
   {
     code: "finnish_lapphund",
@@ -664,6 +697,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Finnish Spitz",
     image: 255,
+    group: 4,
   },
   {
     code: "flat_coated_retriever",
@@ -671,6 +705,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Flat Coated Retriever",
     image: 261,
+    group: 3,
   },
   {
     code: "fox_terrier",
@@ -700,6 +735,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Foxhound",
     image: 325,
+    group: 4,
   },
   {
     code: "french_bulldog",
@@ -746,6 +782,7 @@ export const breeds = [
     longitude: 0.0,
     name: "German Shorthaired Pointer",
     image: 285,
+    group: 3,
   },
   {
     code: "german_spitz",
@@ -770,6 +807,7 @@ export const breeds = [
     longitude: 0.0,
     name: "German Wirehaired Pointer",
     image: 293,
+    group: 3,
   },
   {
     code: "glen_of_imaal_terrier",
@@ -785,6 +823,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Golden Retriever",
     image: 256,
+    group: 3,
   },
   {
     code: "gordon_setter",
@@ -792,6 +831,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Gordon Setter",
     image: 257,
+    group: 3,
   },
   {
     code: "grand_basset_griffon_vendeen",
@@ -799,6 +839,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Grand Basset Griffon Vendeen",
     image: 266,
+    group: 4,
   },
   {
     code: "great_dane",
@@ -813,6 +854,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Greyhound",
     image: 277,
+    group: 4,
   },
   {
     code: "griffon_bruxellois",
@@ -828,6 +870,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Hamiltonstovare",
     image: 287,
+    group: 4,
   },
   {
     code: "harrier",
@@ -835,6 +878,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Harrier",
     image: 289,
+    group: 4,
   },
   {
     code: "havanese",
@@ -850,6 +894,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Hungarian Vizsla",
     image: 27,
+    group: 3,
   },
   {
     code: "hungarian_wirehaired_vizsla",
@@ -857,6 +902,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Hungarian Wirehaired Vizsla",
     image: 452,
+    group: 3,
   },
   {
     code: "ibizan_hound",
@@ -864,6 +910,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Ibizan Hound",
     image: 208,
+    group: 4,
   },
   {
     code: "icelandic_sheepdog",
@@ -878,6 +925,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Irish Red and White Setter",
     image: 216,
+    group: 3,
   },
   {
     code: "irish_setter",
@@ -885,6 +933,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Irish Setter",
     image: 217,
+    group: 3,
   },
   {
     code: "irish_terrier",
@@ -900,6 +949,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Irish Water Spaniel",
     image: 219,
+    group: 3,
   },
   {
     code: "irish_wolfhound",
@@ -907,6 +957,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Irish Wolfhound",
     image: 220,
+    group: 4,
   },
   {
     code: "italian_greyhound",
@@ -922,6 +973,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Italian Spinone",
     image: 68,
+    group: 3,
   },
   {
     code: "jack_russell_terrier",
@@ -1003,6 +1055,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Labrador Retriever",
     image: 232,
+    group: 3,
   },
   {
     code: "lagotto_romagnolo",
@@ -1010,6 +1063,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Lagotto Romagnolo",
     image: 233,
+    group: 3,
   },
   {
     code: "lakeland_terrier",
@@ -1038,6 +1092,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Large Munsterlander",
     image: 192,
+    group: 3,
   },
   {
     code: "leonberger",
@@ -1134,6 +1189,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Norwegian Elkhound",
     image: 166,
+    group: 4,
   },
   {
     code: "norwich_terrier",
@@ -1148,6 +1204,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Nova Scotia Duck Tolling Retriever",
     image: 169,
+    group: 3,
   },
   {
     code: "old_english_sheepdog",
@@ -1162,6 +1219,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Otterhound",
     image: 187,
+    group: 4,
   },
   {
     code: "papillon",
@@ -1221,6 +1279,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Petit Basset Griffon Vendeen",
     image: 441,
+    group: 4,
   },
   {
     code: "pharaoh_hound",
@@ -1228,6 +1287,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pharaoh Hound",
     image: 107,
+    group: 4,
   },
   {
     code: "pointer",
@@ -1235,6 +1295,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pointer",
     image: 117,
+    group: 3,
   },
   {
     code: "polish_lowland_sheepdog",
@@ -1278,30 +1339,37 @@ export const breeds = [
     longitude: 0.0,
     name: "Portuguese Podengo",
     image: 137,
+    group: 4,
     variants: [
       {
         key: "large_smooth_haired",
         label: "Large Smooth Haired",
+        group: 4,
       },
       {
         key: "large_wire_haired",
         label: "Large Wire Haired",
+        group: 4,
       },
       {
         key: "medium_smooth_haired",
         label: "Medium Smooth Haired",
+        group: 4,
       },
       {
         key: "medium_wire_haired",
         label: "Medium Wire Haired",
+        group: 4,
       },
       {
         key: "small_smooth_haired",
         label: "Small Smooth Haired",
+        group: 4,
       },
       {
         key: "small_wire_haired",
         label: "Small Wire Haired",
+        group: 4,
       },
     ],
   },
@@ -1361,6 +1429,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Rhodesian Ridgeback",
     image: 121,
+    group: 4,
   },
   {
     code: "rottweiler",
@@ -1402,6 +1471,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Saluki",
     image: 141,
+    group: 4,
   },
   {
     code: "samoyed",
@@ -1499,6 +1569,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Sloughi",
     image: 93,
+    group: 4,
   },
   {
     code: "soft_coated_wheaten_terrier",
@@ -1521,6 +1592,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Spanish Water Dog",
     image: 67,
+    group: 3,
   },
   {
     code: "st_bernard",
@@ -1543,6 +1615,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Sussex Spaniel",
     image: 80,
+    group: 3,
   },
   {
     code: "swedish_lapphund",
@@ -1608,10 +1681,12 @@ export const breeds = [
     longitude: 0.0,
     name: "Weimaraner",
     image: 29,
+    group: 3,
     variants: [
       {
         key: "long-haired",
         label: "Long-haired",
+        group: 3,
       },
     ],
   },
@@ -1640,6 +1715,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Welsh Springer Spaniel",
     image: 38,
+    group: 3,
   },
   {
     code: "welsh_terrier",
@@ -1663,6 +1739,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Whippet",
     image: 49,
+    group: 4,
   },
   {
     code: "white_swiss_shepherd_dog",
@@ -1677,6 +1754,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Wirehaired Slovakian Pointer",
     image: 95,
+    group: 3,
   },
   {
     code: "xoloitzcuintle",
