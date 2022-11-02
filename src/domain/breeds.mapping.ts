@@ -302,6 +302,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Boston Terrier",
     image: 365,
+    group: 7,
   },
   {
     code: "bouvier_des_flandres",
@@ -341,6 +342,7 @@ export const breeds = [
     longitude: 0.0,
     name: "British Bulldog",
     image: 360,
+    group: 7,
   },
   {
     code: "brittany",
@@ -388,6 +390,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Canaan Dog",
     image: 370,
+    group: 7,
   },
   {
     code: "canadian_eskimo_dog",
@@ -479,6 +482,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Chow Chow",
     image: 319,
+    group: 7,
   },
   {
     code: "cirneco_dell_etna",
@@ -621,6 +625,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Dalmatian",
     image: 348,
+    group: 7,
   },
   {
     code: "dandie_dinmont_terrier",
@@ -708,6 +713,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Eurasier",
     image: 345,
+    group: 7,
   },
   {
     code: "field_spaniel",
@@ -777,6 +783,7 @@ export const breeds = [
     longitude: 0.0,
     name: "French Bulldog",
     image: 271,
+    group: 7,
   },
   {
     code: "german_hunting_terrier",
@@ -828,14 +835,17 @@ export const breeds = [
     longitude: 0.0,
     name: "German Spitz",
     image: 292,
+    group: 7,
     variants: [
       {
         key: "klein",
         label: "Klein",
+        group: 7,
       },
       {
         key: "mittel",
         label: "Mittel",
+        group: 7,
       },
     ],
   },
@@ -885,6 +895,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Great Dane",
     image: 267,
+    group: 7,
   },
   {
     code: "greyhound",
@@ -1036,6 +1047,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Japanese Spitz",
     image: 238,
+    group: 7,
   },
   {
     code: "kangal_shepherd_dog",
@@ -1051,6 +1063,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Karelian Bear Dog",
     image: 249,
+    group: 7,
   },
   {
     code: "keeshond",
@@ -1058,6 +1071,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Keeshond",
     image: 201,
+    group: 7,
   },
   {
     code: "kerry_blue_terrier",
@@ -1152,6 +1166,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Lhasa Apso",
     image: 244,
+    group: 7,
   },
   {
     code: "lowchen",
@@ -1309,18 +1324,22 @@ export const breeds = [
     longitude: 0.0,
     name: "Peruvian Hairless Dog",
     image: 200,
+    group: 7,
     variants: [
       {
         key: "large",
         label: "Large",
+        group: 7,
       },
       {
         key: "medium",
         label: "Medium",
+        group: 7,
       },
       {
         key: "small",
         label: "Small",
+        group: 7,
       },
     ],
   },
@@ -1370,18 +1389,22 @@ export const breeds = [
     longitude: 0.0,
     name: "Poodle",
     image: 130,
+    group: 7,
     variants: [
       {
         key: "miniature",
         label: "Miniature",
+        group: 7,
       },
       {
         key: "standard",
         label: "Standard",
+        group: 7,
       },
       {
         key: "toy",
         label: "Toy",
+        group: 7,
       },
     ],
   },
@@ -1546,6 +1569,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Schipperke",
     image: 52,
+    group: 7,
   },
   {
     code: "schnauzer",
@@ -1589,6 +1613,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Shar Pei",
     image: 74,
+    group: 7,
   },
   {
     code: "shetland_sheepdog",
@@ -1612,6 +1637,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Shih Tzu",
     image: 82,
+    group: 7,
   },
   {
     code: "siberian_husky",
@@ -1739,6 +1765,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Tibetan Terrier",
     image: 8,
+    group: 7,
   },
   {
     code: "tornjak",
@@ -1839,18 +1866,22 @@ export const breeds = [
     longitude: 0.0,
     name: "Xoloitzcuintle",
     image: 163,
+    group: 7,
     variants: [
       {
         key: "intermediate",
         label: "Intermediate",
+        group: 7,
       },
       {
         key: "miniature",
         label: "Miniature",
+        group: 7,
       },
       {
         key: "standard",
         label: "Standard",
+        group: 7,
       },
     ],
   },
