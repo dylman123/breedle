@@ -15,6 +15,7 @@ export const breeds = [
     name: "Afghan Hound",
     image: 2,
     group: 4,
+    origin: "afghanistan",
   },
   {
     code: "airedale_terrier",
@@ -49,6 +50,7 @@ export const breeds = [
     name: "Alaskan Malamute",
     image: 14,
     group: 6,
+    origin: "usa",
   },
   {
     code: "american_hairless_terrier",
@@ -57,6 +59,7 @@ export const breeds = [
     name: "American Hairless Terrier",
     image: 31,
     group: 2,
+    origin: "usa",
   },
   {
     code: "american_staffordshire_terrier",
@@ -65,6 +68,7 @@ export const breeds = [
     name: "American Staffordshire Terrier",
     image: 14,
     group: 2,
+    origin: "usa",
   },
   {
     code: "anatolian_shepherd_dog",
@@ -73,6 +77,7 @@ export const breeds = [
     name: "Anatolian Shepherd Dog",
     image: 41,
     group: 6,
+    origin: "turkey",
   },
   {
     code: "australian_cattle_dog",
@@ -99,6 +104,7 @@ export const breeds = [
     name: "Australian Shepherd",
     image: 411,
     group: 5,
+    origin: "usa",
   },
   {
     code: "australian_silky_terrier",
@@ -134,6 +140,7 @@ export const breeds = [
     name: "Azawakh",
     image: 422,
     group: 4,
+    origin: ["mali", "algeria", "niger", "burkina_faso"],
   },
   {
     code: "basenji",
@@ -267,7 +274,7 @@ export const breeds = [
     name: "Black and Tan Coonhound",
     image: 438,
     group: 4,
-    origin: "austria",
+    origin: ["austria", "usa"],
   },
   {
     code: "bloodhound",
@@ -285,6 +292,7 @@ export const breeds = [
     name: "Bluetick Coonhound",
     image: 352,
     group: 4,
+    origin: "usa",
   },
   {
     code: "bolognese",
@@ -329,6 +337,7 @@ export const breeds = [
     name: "Boston Terrier",
     image: 365,
     group: 7,
+    origin: "usa",
   },
   {
     code: "bouvier_des_flandres",
@@ -427,6 +436,7 @@ export const breeds = [
     name: "Canaan Dog",
     image: 370,
     group: 7,
+    origin: "middle_east",
   },
   {
     code: "canadian_eskimo_dog",
@@ -489,6 +499,7 @@ export const breeds = [
     name: "Chesapeake Bay Retriever",
     image: 400,
     group: 3,
+    origin: "usa",
   },
   {
     code: "chihuahua",
@@ -563,6 +574,7 @@ export const breeds = [
         label: "American",
         image: 23,
         group: 3,
+        origin: "usa",
       },
     ],
   },
@@ -598,6 +610,7 @@ export const breeds = [
     name: "Coton De Tulear",
     image: 336,
     group: 1,
+    origin: "madagascar",
   },
   {
     code: "curly_coated_retriever",
@@ -662,21 +675,25 @@ export const breeds = [
     name: "Dachshund Kaninchen",
     image: 451,
     group: 4,
+    origin: "germany",
     variants: [
       {
         key: "long_haired",
         label: "Long Haired",
         group: 4,
+        origin: "germany",
       },
       {
         key: "smooth_haired",
         label: "Smooth Haired",
         group: 4,
+        origin: "germany",
       },
       {
         key: "wire_haired",
         label: "Wire Haired",
         group: 4,
+        origin: "germany",
       },
     ],
   },
@@ -1687,6 +1704,7 @@ export const breeds = [
     name: "Rhodesian Ridgeback",
     image: 121,
     group: 4,
+    origin: ["zimbabwe", "south_africa"],
   },
   {
     code: "rottweiler",
@@ -1736,6 +1754,7 @@ export const breeds = [
     name: "Saluki",
     image: 141,
     group: 4,
+    origin: "middle_east",
   },
   {
     code: "samoyed",
@@ -1857,6 +1876,7 @@ export const breeds = [
     name: "Sloughi",
     image: 93,
     group: 4,
+    origin: "middle_east",
   },
   {
     code: "soft_coated_wheaten_terrier",
