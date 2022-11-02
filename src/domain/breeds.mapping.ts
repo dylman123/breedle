@@ -29,10 +29,12 @@ export const breeds = [
     longitude: 0.0,
     name: "Akita",
     image: 11,
+    group: 6,
     variants: [
       {
         key: "japanese",
         label: "Japanese",
+        group: 6,
       },
     ],
   },
@@ -42,6 +44,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Alaskan Malamute",
     image: 14,
+    group: 6,
   },
   {
     code: "american_hairless_terrier",
@@ -65,6 +68,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Anatolian Shepherd Dog",
     image: 41,
+    group: 6,
   },
   {
     code: "australian_cattle_dog",
@@ -72,6 +76,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Australian Cattle Dog",
     image: 404,
+    group: 5,
   },
   {
     code: "australian_kelpie",
@@ -79,6 +84,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Australian Kelpie",
     image: 405,
+    group: 5,
   },
   {
     code: "australian_shepherd",
@@ -86,6 +92,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Australian Shepherd",
     image: 411,
+    group: 5,
   },
   {
     code: "australian_silky_terrier",
@@ -101,6 +108,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Australian Stumpy Tail Cattle Dog",
     image: 413,
+    group: 5,
   },
   {
     code: "australian_terrier",
@@ -156,6 +164,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bearded Collie",
     image: 409,
+    group: 5,
   },
   {
     code: "beauceron",
@@ -163,6 +172,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Beauceron",
     image: 410,
+    group: 5,
   },
   {
     code: "bedlington_terrier",
@@ -178,26 +188,31 @@ export const breeds = [
     longitude: 0.0,
     name: "Belgian Shepherd Dog",
     image: 417,
+    group: 5,
     variants: [
       {
         key: "groenendael",
         label: "Groenendael",
         image: 417,
+        group: 5,
       },
       {
         key: "laekenois",
         label: "Laekenois",
         image: 418,
+        group: 5,
       },
       {
         key: "malinois",
         label: "Malinois",
         image: 419,
+        group: 5,
       },
       {
         key: "tervueren",
         label: "Tervueren",
         image: 420,
+        group: 5,
       },
     ],
   },
@@ -207,6 +222,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bergamasco Shepherd Dog",
     image: 426,
+    group: 5,
   },
   {
     code: "bernese_mountain_dog",
@@ -214,6 +230,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bernese Mountain Dog",
     image: 430,
+    group: 6,
   },
   {
     code: "bichon_frise",
@@ -261,6 +278,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Border Collie",
     image: 361,
+    group: 5,
   },
   {
     code: "border_terrier",
@@ -291,6 +309,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bouvier des Flandres",
     image: 372,
+    group: 5,
   },
   {
     code: "boxer",
@@ -298,6 +317,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Boxer",
     image: 373,
+    group: 6,
   },
   {
     code: "bracco_italiano",
@@ -313,6 +333,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Briard",
     image: 392,
+    group: 5,
   },
   {
     code: "british_bulldog",
@@ -351,6 +372,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Bullmastiff",
     image: 366,
+    group: 6,
   },
   {
     code: "cairn_terrier",
@@ -373,6 +395,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Canadian Eskimo Dog",
     image: 376,
+    group: 6,
   },
   {
     code: "cane_corso",
@@ -380,6 +403,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Cane Corso",
     image: 377,
+    group: 6,
   },
   {
     code: "caucasian_shepherd_dog",
@@ -387,6 +411,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Caucasian Shepherd Dog",
     image: 390,
+    group: 6,
   },
   {
     code: "cavalier_king_charles_spaniel",
@@ -402,6 +427,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Central Asian Shepherd Dog",
     image: 397,
+    group: 6,
   },
   {
     code: "cesky_terrier",
@@ -492,16 +518,19 @@ export const breeds = [
     longitude: 0.0,
     name: "Collie",
     image: 329,
+    group: 5,
     variants: [
       {
         key: "rough",
         label: "Rough",
         image: 329,
+        group: 5,
       },
       {
         key: "smooth",
         label: "Smooth",
         image: 330,
+        group: 5,
       },
     ],
   },
@@ -615,6 +644,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Dobermann",
     image: 302,
+    group: 6,
   },
   {
     code: "dogue_de_bordeaux",
@@ -622,6 +652,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Dogue de Bordeaux",
     image: 304,
+    group: 6,
   },
   {
     code: "dutch_shepherd_dog",
@@ -629,6 +660,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Dutch Shepherd Dog",
     image: 313,
+    group: 5,
   },
   {
     code: "english_setter",
@@ -668,6 +700,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Estrela Mountain Dog",
     image: 344,
+    group: 6,
   },
   {
     code: "eurasier",
@@ -690,6 +723,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Finnish Lapphund",
     image: 254,
+    group: 5,
   },
   {
     code: "finnish_spitz",
@@ -758,6 +792,7 @@ export const breeds = [
     longitude: 0.0,
     name: "German Pinscher",
     image: 282,
+    group: 6,
   },
   {
     code: "german_shepherd_dog",
@@ -765,14 +800,17 @@ export const breeds = [
     longitude: 0.0,
     name: "German Shepherd Dog",
     image: 284,
+    group: 5,
     variants: [
       {
         key: "stock_coat",
         label: "Stock Coat",
+        group: 5,
       },
       {
         key: "long_stock_coat",
         label: "Long Stock Coat",
+        group: 5,
       },
     ],
   },
@@ -918,6 +956,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Icelandic Sheepdog",
     image: 209,
+    group: 5,
   },
   {
     code: "irish_red_and_white_setter",
@@ -1004,6 +1043,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Kangal Shepherd Dog",
     image: 246,
+    group: 6,
   },
   {
     code: "karelian_bear_dog",
@@ -1041,6 +1081,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Komondor",
     image: 213,
+    group: 5,
   },
   {
     code: "kuvasz",
@@ -1048,6 +1089,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Kuvasz",
     image: 224,
+    group: 5,
   },
   {
     code: "labrador_retriever",
@@ -1079,10 +1121,12 @@ export const breeds = [
     longitude: 0.0,
     name: "Landseer",
     image: 241,
+    group: 6,
     variants: [
       {
         key: "european_continental_type",
         label: "European Continental Type",
+        group: 6,
       },
     ],
   },
@@ -1100,6 +1144,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Leonberger",
     image: 243,
+    group: 6,
   },
   {
     code: "lhasa_apso",
@@ -1138,6 +1183,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Maremma Sheepdog",
     image: 161,
+    group: 5,
   },
   {
     code: "mastiff",
@@ -1145,6 +1191,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Mastiff",
     image: 331,
+    group: 6,
   },
   {
     code: "miniature_pinscher",
@@ -1160,6 +1207,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Neapolitan Mastiff",
     image: 194,
+    group: 6,
   },
   {
     code: "newfoundland",
@@ -1167,6 +1215,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Newfoundland",
     image: 195,
+    group: 6,
   },
   {
     code: "norfolk_terrier",
@@ -1182,6 +1231,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Norwegian Buhund",
     image: 160,
+    group: 5,
   },
   {
     code: "norwegian_elkhound",
@@ -1212,6 +1262,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Old English Sheepdog",
     image: 177,
+    group: 5,
   },
   {
     code: "otterhound",
@@ -1303,6 +1354,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Polish Lowland Sheepdog",
     image: 126,
+    group: 5,
   },
   {
     code: "pomeranian",
@@ -1379,6 +1431,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Portuguese Water Dog",
     image: 139,
+    group: 6,
   },
   {
     code: "pug",
@@ -1394,6 +1447,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Puli",
     image: 149,
+    group: 5,
   },
   {
     code: "pumi",
@@ -1408,6 +1462,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pyrenean Mastiff",
     image: 102,
+    group: 6,
   },
   {
     code: "pyrenean_mountain_dog",
@@ -1415,6 +1470,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pyrenean Mountain Dog",
     image: 268,
+    group: 6,
   },
   {
     code: "pyrenean_sheepdog_longhaired",
@@ -1422,6 +1478,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Pyrenean Sheepdog Longhaired",
     image: 103,
+    group: 5,
   },
   {
     code: "rhodesian_ridgeback",
@@ -1437,6 +1494,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Rottweiler",
     image: 122,
+    group: 6,
   },
   {
     code: "russian_black_terrier",
@@ -1444,6 +1502,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Russian Black Terrier",
     image: 446,
+    group: 6,
   },
   {
     code: "russian_toy",
@@ -1479,6 +1538,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Samoyed",
     image: 142,
+    group: 6,
   },
   {
     code: "schipperke",
@@ -1493,14 +1553,17 @@ export const breeds = [
     longitude: 0.0,
     name: "Schnauzer",
     image: 53,
+    group: 6,
     variants: [
       {
         key: "giant",
         label: "Giant",
+        group: 6,
       },
       {
         key: "miniature",
         label: "Miniature",
+        group: 6,
       },
     ],
   },
@@ -1533,6 +1596,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Shetland Sheepdog",
     image: 75,
+    group: 5,
   },
   {
     code: "shiba_inu",
@@ -1540,6 +1604,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Shiba Inu",
     image: 81,
+    group: 6,
   },
   {
     code: "shih_tzu",
@@ -1554,6 +1619,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Siberian Husky",
     image: 85,
+    group: 6,
   },
   {
     code: "skye_terrier",
@@ -1585,6 +1651,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Spanish Mastiff",
     image: 66,
+    group: 6,
   },
   {
     code: "spanish_water_dog",
@@ -1600,6 +1667,7 @@ export const breeds = [
     longitude: 0.0,
     name: "St Bernard",
     image: 70,
+    group: 6,
   },
   {
     code: "staffordshire_bull_terrier",
@@ -1623,6 +1691,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Swedish Lapphund",
     image: 86,
+    group: 5,
   },
   {
     code: "swedish_vallhund",
@@ -1630,6 +1699,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Swedish Vallhund",
     image: 87,
+    group: 5,
   },
   {
     code: "tatra_shepherd_dog",
@@ -1637,6 +1707,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Tatra Shepherd Dog",
     image: 127,
+    group: 5,
   },
   {
     code: "tenterfield_terrier",
@@ -1652,6 +1723,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Tibetan Mastiff",
     image: 6,
+    group: 6,
   },
   {
     code: "tibetan_spaniel",
@@ -1674,6 +1746,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Tornjak",
     image: 9,
+    group: 6,
   },
   {
     code: "weimaraner",
@@ -1696,16 +1769,19 @@ export const breeds = [
     longitude: 0.0,
     name: "Welsh Corgi",
     image: 30,
+    group: 5,
     variants: [
       {
         key: "cardigan",
         label: "Cardigan",
         image: 30,
+        group: 5,
       },
       {
         key: "pembroke",
         label: "Pembroke",
         image: 36,
+        group: 5,
       },
     ],
   },
@@ -1747,6 +1823,7 @@ export const breeds = [
     longitude: 0.0,
     name: "White Swiss Shepherd Dog",
     image: 50,
+    group: 5,
   },
   {
     code: "wirehaired_slovakian_pointer",
@@ -1783,6 +1860,7 @@ export const breeds = [
     longitude: 0.0,
     name: "Yakutian Laika",
     image: 453,
+    group: 6,
   },
   {
     code: "yorkshire_terrier",
