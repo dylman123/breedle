@@ -51,14 +51,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
   // console.log({ breed });
 
   const groupName = breed ? groupNames[breed.group] : null;
-
-  const originName = !breed
-    ? null
-    : Array.isArray(breed.origin)
-    ? breed?.origin.map((o) => originNames[o])
-    : typeof breed.origin === "string"
-    ? originNames[breed.origin]
-    : null;
+  const originName = breed ? breed.origin.map((o) => originNames[o]) : null;
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(

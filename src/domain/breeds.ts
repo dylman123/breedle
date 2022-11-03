@@ -22,7 +22,7 @@ export interface Breed {
   name: string;
   image: number;
   group: number;
-  origin: string | readonly string[];
+  origin: readonly string[];
 }
 
 export const breedsWithImage = breeds.filter((c) =>
