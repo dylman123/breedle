@@ -85,6 +85,7 @@ export const breeds = [
     image: 41,
     group: 6,
     origin: ["TR"],
+    size: [8],
   },
   {
     code: "australian_cattle_dog",
@@ -785,6 +786,7 @@ export const breeds = [
     image: 62,
     group: 4,
     origin: ["GB"],
+    size: [8],
   },
   {
     code: "dobermann",
@@ -1096,6 +1098,7 @@ export const breeds = [
     image: 267,
     group: 7,
     origin: ["DE"],
+    size: [8],
   },
   {
     code: "greyhound",
@@ -1233,6 +1236,7 @@ export const breeds = [
     image: 220,
     group: 4,
     origin: ["IE"],
+    size: [8],
   },
   {
     code: "italian_greyhound",
@@ -2065,6 +2069,7 @@ export const breeds = [
     image: 66,
     group: 6,
     origin: ["ES"],
+    size: [8],
   },
   {
     code: "spanish_water_dog",
