@@ -70,6 +70,7 @@ export const breeds = [
     image: 14,
     group: 2,
     origin: ["US"],
+    size: [4],
   },
   {
     code: "anatolian_shepherd_dog",
@@ -153,6 +154,7 @@ export const breeds = [
     image: 425,
     group: 4,
     origin: ["CD"],
+    size: [4],
   },
   {
     code: "basset_fauve_de_bretagne",
@@ -181,6 +183,7 @@ export const breeds = [
     image: 407,
     group: 4,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "bearded_collie",
@@ -208,6 +211,7 @@ export const breeds = [
     image: 416,
     group: 2,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "belgian_shepherd_dog",
@@ -401,6 +405,7 @@ export const breeds = [
     image: 394,
     group: 3,
     origin: ["FR"],
+    size: [4],
   },
   {
     code: "bull_terrier",
@@ -557,6 +562,7 @@ export const breeds = [
     image: 319,
     group: 7,
     origin: ["CN"],
+    size: [4],
   },
   {
     code: "cirneco_dell_etna",
@@ -575,6 +581,7 @@ export const breeds = [
     image: 328,
     group: 3,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "cocker_spaniel",
@@ -584,7 +591,7 @@ export const breeds = [
     image: 323,
     group: 3,
     origin: ["GB"],
-    size: [3],
+    size: [3, 4],
     variants: [
       {
         key: "american",
@@ -834,6 +841,7 @@ export const breeds = [
     image: 251,
     group: 3,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "finnish_lapphund",
@@ -843,6 +851,7 @@ export const breeds = [
     image: 254,
     group: 5,
     origin: ["FI"],
+    size: [4],
   },
   {
     code: "finnish_spitz",
@@ -852,6 +861,7 @@ export const breeds = [
     image: 255,
     group: 4,
     origin: ["FI"],
+    size: [4],
   },
   {
     code: "flat_coated_retriever",
@@ -870,7 +880,7 @@ export const breeds = [
     image: 263,
     group: 2,
     origin: ["GB"],
-    size: [3],
+    size: [3, 4],
     variants: [
       {
         key: "smooth",
@@ -878,6 +888,7 @@ export const breeds = [
         image: 263,
         group: 2,
         origin: ["GB"],
+        size: [4],
       },
       {
         key: "wire",
@@ -916,6 +927,7 @@ export const breeds = [
     image: 230,
     group: 2,
     origin: ["DE"],
+    size: [4],
   },
   {
     code: "german_pinscher",
@@ -925,6 +937,7 @@ export const breeds = [
     image: 282,
     group: 6,
     origin: ["DE"],
+    size: [4],
   },
   {
     code: "german_shepherd_dog",
@@ -999,6 +1012,7 @@ export const breeds = [
     image: 295,
     group: 2,
     origin: ["IE", "GB"],
+    size: [4],
   },
   {
     code: "golden_retriever",
@@ -1146,6 +1160,7 @@ export const breeds = [
     image: 218,
     group: 2,
     origin: ["IE", "GB"],
+    size: [4],
   },
   {
     code: "irish_water_spaniel",
@@ -1239,6 +1254,7 @@ export const breeds = [
     image: 201,
     group: 7,
     origin: ["DE", "NL"],
+    size: [4],
   },
   {
     code: "kerry_blue_terrier",
@@ -1248,6 +1264,7 @@ export const breeds = [
     image: 203,
     group: 2,
     origin: ["IE", "GB"],
+    size: [4],
   },
   {
     code: "king_charles_spaniel",
@@ -1293,6 +1310,7 @@ export const breeds = [
     image: 233,
     group: 3,
     origin: ["IT"],
+    size: [4],
   },
   {
     code: "lakeland_terrier",
@@ -1377,6 +1395,7 @@ export const breeds = [
     image: 155,
     group: 2,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "maremma_sheepdog",
@@ -1442,6 +1461,7 @@ export const breeds = [
     image: 160,
     group: 5,
     origin: ["NO"],
+    size: [4],
   },
   {
     code: "norwegian_elkhound",
@@ -1711,6 +1731,7 @@ export const breeds = [
     image: 149,
     group: 5,
     origin: ["HU"],
+    size: [4],
   },
   {
     code: "pumi",
@@ -1834,7 +1855,7 @@ export const breeds = [
     image: 53,
     group: 6,
     origin: ["DE"],
-    size: [3],
+    size: [3, 4],
     variants: [
       {
         key: "giant",
@@ -1879,6 +1900,7 @@ export const breeds = [
     image: 74,
     group: 7,
     origin: ["CN"],
+    size: [4],
   },
   {
     code: "shetland_sheepdog",
@@ -1888,6 +1910,7 @@ export const breeds = [
     image: 75,
     group: 5,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "shiba_inu",
@@ -1897,6 +1920,7 @@ export const breeds = [
     image: 81,
     group: 6,
     origin: ["JP"],
+    size: [4],
   },
   {
     code: "shih_tzu",
@@ -1944,6 +1968,7 @@ export const breeds = [
     image: 59,
     group: 2,
     origin: ["IE", "GB"],
+    size: [4],
   },
   {
     code: "spanish_mastiff",
@@ -1980,6 +2005,7 @@ export const breeds = [
     image: 77,
     group: 2,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "sussex_spaniel",
@@ -1999,6 +2025,7 @@ export const breeds = [
     image: 86,
     group: 5,
     origin: ["SE"],
+    size: [4],
   },
   {
     code: "swedish_vallhund",
@@ -2055,6 +2082,7 @@ export const breeds = [
     image: 8,
     group: 7,
     origin: ["TI"],
+    size: [4],
   },
   {
     code: "tornjak",
@@ -2117,6 +2145,7 @@ export const breeds = [
     image: 38,
     group: 3,
     origin: ["GB"],
+    size: [4],
   },
   {
     code: "welsh_terrier",
