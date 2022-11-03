@@ -23,6 +23,7 @@ export interface Breed {
   image: number;
   group: number;
   origin: readonly string[];
+  size: readonly number[];
 }
 
 export const breedsWithImage = breeds.filter((c) =>
