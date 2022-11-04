@@ -86,10 +86,14 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         return;
       }
 
+      const currentGuessObject = breeds.find((b) => b.name === currentGuess);
+
       const newGuess = {
         name: currentGuess,
-        code:
-          breeds.find((c) => c.name === currentGuess)?.code ?? "affenpinscher",
+        code: currentGuessObject?.code ?? "",
+        group: currentGuessObject?.group ?? 0,
+        origin: currentGuessObject?.origin ?? [],
+        size: currentGuessObject?.origin ?? [],
         distance: geolib.getDistance(guessedBreed, breed),
         direction: geolib.getCompassDirection(
           guessedBreed,

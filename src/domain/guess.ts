@@ -5,6 +5,9 @@ export interface Guess {
   distance: number;
   direction: Direction;
   code: string;
+  group: number;
+  origin: readonly string[];
+  // size: readonly number[];
 }
 
 export function loadAllGuesses(): Record<string, Guess[]> {

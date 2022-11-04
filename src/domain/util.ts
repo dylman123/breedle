@@ -81,3 +81,11 @@ export function formatDistance(
     ? `${Math.round(distanceInKm).toLocaleString()}km`
     : `${Math.round(distanceInKm * 0.621371).toLocaleString()}mi`;
 }
+
+export function isGroupCorrect(guess?: Guess, target?: Breed) {
+  if (!guess || !target) {
+    return false;
+  } else {
+    return guess.group === target.group;
+  }
+}

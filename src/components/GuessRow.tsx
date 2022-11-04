@@ -4,6 +4,7 @@ import {
   generateSquareCharacters,
   getDirectionEmoji,
   getResultEmoji,
+  isGroupCorrect,
 } from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -13,6 +14,9 @@ import { Twemoji } from "@teuteuf/react-emoji-render";
 import { Breed, getBreedName, sanitizeBreedName } from "../domain/breeds";
 import { areas } from "../domain/breeds.area";
 import { breeds } from "../domain/breeds.mapping";
+import { groupNames } from "../domain/groups.mapping";
+import { originNames } from "../domain/origins.mapping";
+// import { sizeNames } from "../domain/sizes.mapping";
 import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;
@@ -43,6 +47,8 @@ export function GuessRow({
         sanitizeBreedName(getBreedName(i18n.resolvedLanguage, breed)) ===
         sanitizeBreedName(guess.name)
     );
+
+  const guessedGroup = guess && groupNames[guess?.group];
 
   const sizePercent =
     targetBreed &&
@@ -124,13 +130,17 @@ export function GuessRow({
               {guess?.name}
             </p>
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
-            {guess && formatDistance(guess.distance, distanceUnit)}
+          <div
+            className={`flex items-center justify-center border-2 h-8 col-span-3 animate-reveal rounded ${
+              isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
+            }`}
+          >
+            {guessedGroup}
           </div>
           <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
             {guess && formatDistance(guess.distance, distanceUnit)}
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
             {`${percentToDisplay}%`}
           </div>
           <div className="flex items-center justify-center border-2 h-8 col-span-1 row-span-2 animate-reveal animate-pop rounded mb-4">
