@@ -222,6 +222,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               breed={breed}
             />
             <div className="flex flex-wrap gap-4 justify-center">
+              <div className="font-bold text-center block mt-4 whitespace-nowrap">
+                {breedName}
+              </div>
               {/* <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href={`https://www.google.com/maps?q=${breedName}+${breed.code.toUpperCase()}&hl=${
