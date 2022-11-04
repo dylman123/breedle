@@ -4,6 +4,7 @@ import {
   generateSquareCharacters,
   getDirectionEmoji,
   getResultEmoji,
+  isNameCorrect,
   isGroupCorrect,
   isOriginCorrect,
 } from "../domain/util";
@@ -49,10 +50,12 @@ export function GuessRow({
         sanitizeBreedName(guess.name)
     );
 
+  const guessedName = guess?.name;
+
   const guessedGroup = guess && groupNames[guess?.group];
 
   const guessedOrigin = (
-    <div className="flex flex-row gap-2 items-center justify-center">
+    <div className="flex flex-row gap-1 items-center justify-left">
       {guess &&
         guess?.origin.map((o) => {
           return (
@@ -146,12 +149,20 @@ export function GuessRow({
     case "ENDED":
       return (
         <div className="grid grid-cols-7 grid-rows-3 gap-1 text-center mb-8">
-          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
+          <div
+            className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded ${
+              isNameCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
+            }`}
+          >
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
-              {guess?.name}
+              {guessedName}
             </p>
           </div>
-          <div className="flex items-center justify-center border-2 h-full col-span-1 row-span-3 animate-reveal animate-pop rounded">
+          <div
+            className={`flex items-center justify-center border-2 h-full col-span-1 row-span-3 animate-reveal animate-pop rounded ${
+              isNameCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
+            }`}
+          >
             {guess && targetBreed && (
               <Twemoji
                 className="flex items-center"

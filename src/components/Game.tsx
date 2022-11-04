@@ -21,6 +21,7 @@ import { breeds } from "../domain/breeds.mapping";
 import { originNames } from "../domain/origins.mapping";
 import { groupNames } from "../domain/groups.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
+import { sizeValues } from "../domain/sizes.mapping";
 
 const ENABLE_TWITCH_LINK = false;
 const MAX_TRY_COUNT = 6;
@@ -52,6 +53,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const groupName = breed ? groupNames[breed.group] : null;
   const originName = breed ? breed.origin.map((o) => originNames[o]) : null;
+  const size = breed?.size;
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(
@@ -194,6 +196,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       <div className="text-yellow-200">
         {groupName}
         {originName}
+        {size}
       </div>
       {rotationMode && !hideImageMode && !gameEnded && (
         <button
