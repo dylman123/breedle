@@ -7,6 +7,7 @@ import {
   isNameCorrect,
   isGroupCorrect,
   isOriginCorrect,
+  calculateSizeMatch,
 } from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -18,6 +19,7 @@ import { areas } from "../domain/breeds.area";
 import { breeds } from "../domain/breeds.mapping";
 import { groupNames } from "../domain/groups.mapping";
 import { originNames } from "../domain/origins.mapping";
+import { heights } from "../domain/sizes.mapping";
 // import { sizeNames } from "../domain/sizes.mapping";
 import { useTranslation } from "react-i18next";
 
@@ -55,7 +57,7 @@ export function GuessRow({
   const guessedGroup = guess && groupNames[guess?.group];
 
   const guessedOrigin = (
-    <div className="flex flex-row gap-1 items-center justify-left">
+    <div className="flex flex-row gap-1 items-center justify-end">
       {guess &&
         guess?.origin.map((o) => {
           return (
@@ -74,16 +76,7 @@ export function GuessRow({
     </div>
   );
 
-  const sizePercent =
-    targetBreed &&
-    guessedBreed &&
-    Math.min(
-      999,
-      Math.round((areas[targetBreed.code] / areas[guessedBreed.code]) * 100)
-    );
-
-  const percentToDisplay =
-    settingsData.showScale && sizePercent != null ? sizePercent : proximity;
+  const percentToDisplay = calculateSizeMatch(guess, targetBreed);
 
   const [animationState, setAnimationState] =
     useState<AnimationState>("NOT_STARTED");
@@ -177,7 +170,11 @@ export function GuessRow({
           >
             {guessedGroup}
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+          <div
+            className={`flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded ${
+              isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
+            }`}
+          >
             {`${percentToDisplay}%`}
           </div>
           <div className={`col-span-6 animate-reveal`}>{guessedOrigin}</div>

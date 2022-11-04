@@ -1,6 +1,6 @@
 // Value is a tuple of height range in inches:
 // [min, max]
-export const sizeValues: Record<number, [number, number,]> = {
+export const heights: Record<number, [number, number]> = {
   1: [6, 9],
   2: [7, 12],
   3: [10, 15],

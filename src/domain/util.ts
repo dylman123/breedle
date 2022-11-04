@@ -1,5 +1,6 @@
 import { Breed } from "./breeds";
 import { Guess } from "./guess";
+import { heights } from "./sizes.mapping";
 
 const MAX_DISTANCE_ON_EARTH = 20_000_000;
 
@@ -98,11 +99,40 @@ export function isGroupCorrect(guess?: Guess, target?: Breed) {
   }
 }
 
-export function isOriginCorrect(guess?: string, target?: readonly string[]) {
-  console.log({ guess, target });
+export function isOriginCorrect(
+  guessOrigin?: string,
+  targetOrigins?: readonly string[]
+) {
+  if (!guessOrigin || !targetOrigins) {
+    return false;
+  } else {
+    return targetOrigins.includes(guessOrigin);
+  }
+}
+
+export function calculateSizeMatch(guess?: Guess, target?: Breed) {
   if (!guess || !target) {
     return false;
   } else {
-    return target.includes(guess);
+    const minG = Math.min(...heights[Math.min(...guess.size)]);
+    const maxG = Math.max(...heights[Math.max(...guess.size)]);
+    const minT = Math.min(...heights[Math.min(...target.size)]);
+    const maxT = Math.max(...heights[Math.max(...target.size)]);
+
+    const overlap = minG < minT ? maxG - minT + 1 : maxT - minG + 1;
+    const lengthT = maxT - minT;
+    const percentOverlap = overlap / lengthT;
+
+    console.log({
+      minG,
+      maxG,
+      minT,
+      maxT,
+      percentOverlap,
+      overlap,
+      lengthT,
+    });
+
+    return percentOverlap;
   }
 }

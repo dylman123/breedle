@@ -21,7 +21,7 @@ import { breeds } from "../domain/breeds.mapping";
 import { originNames } from "../domain/origins.mapping";
 import { groupNames } from "../domain/groups.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
-import { sizeValues } from "../domain/sizes.mapping";
+import { heights } from "../domain/sizes.mapping";
 
 const ENABLE_TWITCH_LINK = false;
 const MAX_TRY_COUNT = 6;
@@ -48,8 +48,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     () => (breed ? getBreedName(i18n.resolvedLanguage, breed) : ""),
     [breed, i18n.resolvedLanguage]
   );
-
-  // console.log({ breed });
 
   const groupName = breed ? groupNames[breed.group] : null;
   const originName = breed ? breed.origin.map((o) => originNames[o]) : null;
@@ -95,7 +93,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         code: currentGuessObject?.code ?? "",
         group: currentGuessObject?.group ?? 0,
         origin: currentGuessObject?.origin ?? [],
-        size: currentGuessObject?.origin ?? [],
+        size: currentGuessObject?.size ?? [],
         distance: geolib.getDistance(guessedBreed, breed),
         direction: geolib.getCompassDirection(
           guessedBreed,

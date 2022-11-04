@@ -7,7 +7,7 @@ export interface Guess {
   code: string;
   group: number;
   origin: readonly string[];
-  // size: readonly number[];
+  size: readonly number[];
 }
 
 export function loadAllGuesses(): Record<string, Guess[]> {
