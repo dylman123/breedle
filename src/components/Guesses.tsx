@@ -21,17 +21,15 @@ export function Guesses({
 }: GuessesProps) {
   return (
     <div>
-      <div className="grid grid-cols-7 gap-1 text-center">
-        {Array.from(Array(rowCount).keys()).map((index) => (
-          <GuessRow
-            targetBreed={targetBreed}
-            key={index}
-            guess={guesses[index]}
-            settingsData={settingsData}
-            breedInputRef={breedInputRef}
-          />
-        ))}
-      </div>
+      {Array.from(Array(rowCount).keys()).map((index) => (
+        <GuessRow
+          targetBreed={targetBreed}
+          key={index}
+          guess={guesses[index]}
+          settingsData={settingsData}
+          breedInputRef={breedInputRef}
+        />
+      ))}
     </div>
   );
 }

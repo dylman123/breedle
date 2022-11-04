@@ -92,14 +92,14 @@ export function GuessRow({
       return (
         <div
           onClick={handleClickOnEmptyRow}
-          className={`col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded mb-1`}
+          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded`}
         />
       );
     case "RUNNING":
       return (
         <>
           <div
-            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded mb-4`}
+            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded`}
           >
             {squares.map((character, index) => (
               <div
@@ -124,26 +124,13 @@ export function GuessRow({
       );
     case "ENDED":
       return (
-        <>
-          <div className="flex items-center justify-center border-2 h-8 col-span-7 animate-reveal rounded">
+        <div className="grid grid-cols-7 grid-rows-3 gap-1 text-center mb-8">
+          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
               {guess?.name}
             </p>
           </div>
-          <div
-            className={`flex items-center justify-center border-2 h-8 col-span-3 animate-reveal rounded ${
-              isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
-            }`}
-          >
-            {guessedGroup}
-          </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
-            {guess && formatDistance(guess.distance, distanceUnit)}
-          </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
-            {`${percentToDisplay}%`}
-          </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 row-span-2 animate-reveal animate-pop rounded mb-4">
+          <div className="flex items-center justify-center border-2 h-full col-span-1 row-span-3 animate-reveal animate-pop rounded">
             {guess && targetBreed && (
               <Twemoji
                 className="flex items-center"
@@ -151,7 +138,20 @@ export function GuessRow({
               />
             )}
           </div>
-        </>
+          <div
+            className={`flex items-center justify-center border-2 h-8 col-span-4 animate-reveal rounded ${
+              isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
+            }`}
+          >
+            {guessedGroup}
+          </div>
+          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+            {`${percentToDisplay}%`}
+          </div>
+          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
+            {guess && formatDistance(guess.distance, distanceUnit)}
+          </div>
+        </div>
       );
   }
 }
