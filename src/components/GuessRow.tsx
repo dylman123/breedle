@@ -86,14 +86,14 @@ export function GuessRow({
       return (
         <div
           onClick={handleClickOnEmptyRow}
-          className={`col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded`}
+          className={`col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded mb-1`}
         />
       );
     case "RUNNING":
       return (
         <>
           <div
-            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded`}
+            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded mb-4`}
           >
             {squares.map((character, index) => (
               <div
@@ -119,15 +119,21 @@ export function GuessRow({
     case "ENDED":
       return (
         <>
-          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
+          <div className="flex items-center justify-center border-2 h-8 col-span-7 animate-reveal rounded">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
               {guess?.name}
             </p>
           </div>
-          {/* <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
             {guess && formatDistance(guess.distance, distanceUnit)}
-          </div> */}
-          <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
+          </div>
+          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+            {guess && formatDistance(guess.distance, distanceUnit)}
+          </div>
+          <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
+            {`${percentToDisplay}%`}
+          </div>
+          <div className="flex items-center justify-center border-2 h-8 col-span-1 row-span-2 animate-reveal animate-pop rounded mb-4">
             {guess && targetBreed && (
               <Twemoji
                 className="flex items-center"
@@ -135,9 +141,6 @@ export function GuessRow({
               />
             )}
           </div>
-          {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal animate-pop rounded">
-            {`${percentToDisplay}%`}
-          </div> */}
         </>
       );
   }
