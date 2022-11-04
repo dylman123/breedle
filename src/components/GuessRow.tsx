@@ -5,6 +5,7 @@ import {
   getDirectionEmoji,
   getResultEmoji,
   isGroupCorrect,
+  isOriginCorrect,
 } from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -49,6 +50,26 @@ export function GuessRow({
     );
 
   const guessedGroup = guess && groupNames[guess?.group];
+
+  const guessedOrigin = (
+    <div className="flex flex-row gap-2 items-center justify-center">
+      {guess &&
+        guess?.origin.map((o) => {
+          return (
+            <div
+              key={`origin-${o}`}
+              className={`border-2 rounded px-2 h-8 ${
+                isOriginCorrect(o, targetBreed?.origin)
+                  ? "bg-green-500"
+                  : "bg-black"
+              }`}
+            >
+              {originNames[o]}
+            </div>
+          );
+        })}
+    </div>
+  );
 
   const sizePercent =
     targetBreed &&
@@ -148,9 +169,7 @@ export function GuessRow({
           <div className="flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded">
             {`${percentToDisplay}%`}
           </div>
-          <div className="flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded">
-            {guess && formatDistance(guess.distance, distanceUnit)}
-          </div>
+          <div className={`col-span-6 animate-reveal`}>{guessedOrigin}</div>
         </div>
       );
   }

@@ -89,3 +89,12 @@ export function isGroupCorrect(guess?: Guess, target?: Breed) {
     return guess.group === target.group;
   }
 }
+
+export function isOriginCorrect(guess?: string, target?: readonly string[]) {
+  console.log({ guess, target });
+  if (!guess || !target) {
+    return false;
+  } else {
+    return target.includes(guess);
+  }
+}
