@@ -119,19 +119,23 @@ export function calculateSizeMatch(guess?: Guess, target?: Breed) {
     const minT = Math.min(...heights[Math.min(...target.size)]);
     const maxT = Math.max(...heights[Math.max(...target.size)]);
 
-    const overlap = minG < minT ? maxG - minT + 1 : maxT - minG + 1;
+    const overlap = Math.max(
+      0, // ensure lowest value possible is 0
+      minG < minT ? maxG - minT : maxT - minG
+    );
     const lengthT = maxT - minT;
-    const percentOverlap = overlap / lengthT;
+    // ensure highest value possible is 100
+    const percentOverlap = Math.min(100, (overlap / lengthT) * 100);
 
-    console.log({
+    const sizeData = {
       minG,
       maxG,
       minT,
       maxT,
-      percentOverlap,
       overlap,
+      percentOverlap,
       lengthT,
-    });
+    };
 
     return percentOverlap;
   }

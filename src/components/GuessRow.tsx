@@ -78,6 +78,17 @@ export function GuessRow({
 
   const percentToDisplay = calculateSizeMatch(guess, targetBreed);
 
+  const sizeBgColor =
+    percentToDisplay < 30
+      ? "bg-black"
+      : percentToDisplay < 70
+      ? "bg-blue-500"
+      : percentToDisplay < 100
+      ? "bg-yellow-500"
+      : percentToDisplay == 100
+      ? "bg-green-500"
+      : "bg-black";
+
   const [animationState, setAnimationState] =
     useState<AnimationState>("NOT_STARTED");
 
@@ -171,9 +182,7 @@ export function GuessRow({
             {guessedGroup}
           </div>
           <div
-            className={`flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded ${
-              isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
-            }`}
+            className={`flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded ${sizeBgColor}`}
           >
             {`${percentToDisplay}%`}
           </div>
