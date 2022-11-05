@@ -112,7 +112,15 @@ export function isOriginCorrect(
 
 export function calculateSizeMatch(guess?: Guess, target?: Breed) {
   if (!guess || !target) {
-    return false;
+    return {
+      minG: 0,
+      maxG: 0,
+      minT: 0,
+      maxT: 0,
+      overlap: 0,
+      percentOverlap: 0,
+      lengthT: 0,
+    };
   } else {
     const minG = Math.min(...heights[Math.min(...guess.size)]);
     const maxG = Math.max(...heights[Math.max(...guess.size)]);
@@ -137,6 +145,24 @@ export function calculateSizeMatch(guess?: Guess, target?: Breed) {
       lengthT,
     };
 
-    return percentOverlap;
+    return sizeData;
   }
+}
+
+export function generateSizeMap(
+  min: number,
+  max: number,
+  index: number
+): string[] {
+  const squares = new Array<string>(36);
+  const colors = ["🟨", "🟦"];
+
+  squares.fill("-", 2, 33);
+  squares[0] = index == 0 ? '1"' : " ";
+  squares[1] = " ";
+  squares[34] = " ";
+  squares[35] = index == 0 ? '32"' : " ";
+  squares.fill(colors[index], min, max);
+
+  return squares;
 }

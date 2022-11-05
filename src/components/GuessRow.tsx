@@ -8,6 +8,7 @@ import {
   isGroupCorrect,
   isOriginCorrect,
   calculateSizeMatch,
+  generateSizeMap,
 } from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -76,16 +77,40 @@ export function GuessRow({
     </div>
   );
 
-  const percentToDisplay = calculateSizeMatch(guess, targetBreed);
+  const sizeData = calculateSizeMatch(guess, targetBreed);
+
+  const sizeMapGuess = (
+    <div className="grid grid-rows-1">
+      <div className="row-span-1 grid grid-cols-32 grid-rows-1 grid-flow-col">
+        {generateSizeMap(sizeData.minG, sizeData.maxG, 0).map((s, idx) => (
+          <div key={`sq-G${idx}`} className="w-2 col-span-1">
+            {s}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const sizeMapTarget = (
+    <div className="grid grid-rows-1">
+      <div className="row-span-1 grid grid-cols-32 grid-rows-1 grid-flow-col">
+        {generateSizeMap(sizeData.minT, sizeData.maxT, 1).map((s, idx) => (
+          <div key={`sq-G${idx}`} className="w-2 col-span-1">
+            {s}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   const sizeBgColor =
-    percentToDisplay < 30
+    sizeData.percentOverlap < 30
       ? "bg-black"
-      : percentToDisplay < 70
+      : sizeData.percentOverlap < 70
       ? "bg-blue-500"
-      : percentToDisplay < 100
+      : sizeData.percentOverlap < 100
       ? "bg-yellow-500"
-      : percentToDisplay == 100
+      : sizeData.percentOverlap == 100
       ? "bg-green-500"
       : "bg-black";
 
@@ -120,14 +145,14 @@ export function GuessRow({
       return (
         <div
           onClick={handleClickOnEmptyRow}
-          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded mb-8 mx-12`}
+          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded my-6 mx-12`}
         />
       );
     case "RUNNING":
       return (
         <>
           <div
-            className={`flex text-2xl justify-evenly items-center col-span-7 border-2 h-8 rounded mb-8 mx-12`}
+            className={`flex text-2xl justify-evenly items-center col-span-7 border-2 h-8 rounded my-6 mx-12`}
           >
             {squares.map((character, index) => (
               <div
@@ -143,7 +168,7 @@ export function GuessRow({
           </div>
           {/* <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal rounded">
             <CountUp
-              end={percentToDisplay}
+              end={sizeData.percentOverlap}
               suffix="%"
               duration={(SQUARE_ANIMATION_LENGTH * 5) / 1000}
             />
@@ -152,7 +177,7 @@ export function GuessRow({
       );
     case "ENDED":
       return (
-        <div className="grid grid-cols-7 grid-rows-4 gap-1 text-center mb-8 mr-12">
+        <div className="grid grid-cols-7 grid-rows-5 gap-1 text-center my-6 mr-12">
           {guess && targetBreed && (
             <Twemoji
               className="flex items-center justify-center h-8 col-span-1 animate-reveal"
@@ -175,18 +200,31 @@ export function GuessRow({
           </div>
           <Twemoji
             className="flex items-center justify-center h-8 col-span-1 animate-reveal"
-            text="📏"
-          />
-          <div
-            className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded ${sizeBgColor}`}
-          >
-            {`${percentToDisplay}%`}
-          </div>
-          <Twemoji
-            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
             text="🌏"
           />
           <div className={`col-span-6 animate-reveal`}>{guessedOrigin}</div>
+          <Twemoji
+            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+            text="📏"
+          />
+          <div
+            // className={`flex items-center justify-center h-8 col-span-6 animate-reveal rounded border-2 ${sizeBgColor}`}
+            className={`flex items-center justify-center h-8 col-span-6 animate-reveal`}
+          >
+            {/* {`${sizeData.percentOverlap}%`} */}
+            {sizeMapGuess}
+          </div>
+          <Twemoji
+            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+            text=""
+          />
+          <div
+            // className={`flex items-center justify-center h-8 col-span-6 animate-reveal rounded border-2 ${sizeBgColor}`}
+            className={`flex items-center justify-center h-8 col-span-6 animate-reveal`}
+          >
+            {/* {`${sizeData.percentOverlap}%`} */}
+            {sizeMapTarget}
+          </div>
         </div>
       );
   }
