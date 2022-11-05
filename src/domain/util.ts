@@ -62,10 +62,10 @@ export function generateSquareCharacters(
   const greenSquareCount = Math.floor(proximity / 20);
   const yellowSquareCount = proximity - greenSquareCount * 20 >= 10 ? 1 : 0;
 
-  characters.fill("🟩", 0, greenSquareCount);
-  characters.fill("🟨", greenSquareCount, greenSquareCount + yellowSquareCount);
+  characters.fill("🐶", 0, greenSquareCount);
+  characters.fill("🐶", greenSquareCount, greenSquareCount + yellowSquareCount);
   characters.fill(
-    theme === "light" ? "⬜" : "⬛",
+    theme === "light" ? "🐶" : "🐶",
     greenSquareCount + yellowSquareCount
   );
 

@@ -57,7 +57,7 @@ export function GuessRow({
   const guessedGroup = guess && groupNames[guess?.group];
 
   const guessedOrigin = (
-    <div className="flex flex-row gap-1 items-center justify-end">
+    <div className="flex flex-row gap-1 items-center justify-start">
       {guess &&
         guess?.origin.map((o) => {
           return (
@@ -120,14 +120,14 @@ export function GuessRow({
       return (
         <div
           onClick={handleClickOnEmptyRow}
-          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded`}
+          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded mb-8 mx-12`}
         />
       );
     case "RUNNING":
       return (
         <>
           <div
-            className={`flex text-2xl w-full justify-evenly items-center col-span-7 border-2 h-8 rounded`}
+            className={`flex text-2xl justify-evenly items-center col-span-7 border-2 h-8 rounded mb-8 mx-12`}
           >
             {squares.map((character, index) => (
               <div
@@ -152,40 +152,40 @@ export function GuessRow({
       );
     case "ENDED":
       return (
-        <div className="grid grid-cols-7 grid-rows-3 gap-1 text-center mb-8">
+        <div className="grid grid-cols-7 grid-rows-4 gap-1 text-center mb-8 mr-12">
+          {guess && targetBreed && (
+            <Twemoji
+              className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+              text={getResultEmoji(guess, targetBreed)}
+            />
+          )}
+          <p className="flex items-center justify-start h-8 col-span-6 animate-reveal text-ellipsis overflow-hidden whitespace-nowrap">
+            {guessedName}
+          </p>
+          <Twemoji
+            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+            text="📒"
+          />
           <div
             className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded ${
-              isNameCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
-            }`}
-          >
-            <p className="text-ellipsis overflow-hidden whitespace-nowrap">
-              {guessedName}
-            </p>
-          </div>
-          <div
-            className={`flex items-center justify-center border-2 h-full col-span-1 row-span-3 animate-reveal animate-pop rounded ${
-              isNameCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
-            }`}
-          >
-            {guess && targetBreed && (
-              <Twemoji
-                className="flex items-center"
-                text={getResultEmoji(guess, targetBreed)}
-              />
-            )}
-          </div>
-          <div
-            className={`flex items-center justify-center border-2 h-8 col-span-4 animate-reveal rounded ${
               isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
             }`}
           >
             {guessedGroup}
           </div>
+          <Twemoji
+            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+            text="📏"
+          />
           <div
-            className={`flex items-center justify-center border-2 h-8 col-span-2 animate-reveal rounded ${sizeBgColor}`}
+            className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded ${sizeBgColor}`}
           >
             {`${percentToDisplay}%`}
           </div>
+          <Twemoji
+            className="flex items-center justify-center h-8 col-span-1 animate-reveal"
+            text="🌏"
+          />
           <div className={`col-span-6 animate-reveal`}>{guessedOrigin}</div>
         </div>
       );

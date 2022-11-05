@@ -191,11 +191,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           </button>
         )}
       </div>
-      <div className="text-yellow-200">
-        {groupName}
-        {originName}
-        {size}
-      </div>
       {rotationMode && !hideImageMode && !gameEnded && (
         <button
           className="font-bold rounded p-1 border-2 uppercase mb-2 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
