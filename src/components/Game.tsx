@@ -49,10 +49,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     [breed, i18n.resolvedLanguage]
   );
 
-  const groupName = breed ? groupNames[breed.group] : null;
-  const originName = breed ? breed.origin.map((o) => originNames[o]) : null;
-  const size = breed?.size;
-
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(
     "hideImageMode",
