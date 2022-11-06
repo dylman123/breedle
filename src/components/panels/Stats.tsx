@@ -6,19 +6,12 @@ import { Panel } from "./Panel";
 interface StatsProps {
   isOpen: boolean;
   close: () => void;
-  distanceUnit: "km" | "miles";
 }
 
-export function Stats({ isOpen, close, distanceUnit }: StatsProps) {
+export function Stats({ isOpen, close }: StatsProps) {
   const { t } = useTranslation();
-  const {
-    played,
-    winRatio,
-    currentStreak,
-    maxStreak,
-    averageBestDistance,
-    guessDistribution,
-  } = getStatsData();
+  const { played, winRatio, currentStreak, maxStreak, guessDistribution } =
+    getStatsData();
 
   const maxDistribution = Math.max(...Object.values(guessDistribution));
   return (

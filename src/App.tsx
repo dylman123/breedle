@@ -92,11 +92,7 @@ export default function App() {
         settingsData={settingsData}
         updateSettings={updateSettings}
       /> */}
-      <Stats
-        isOpen={statsOpen}
-        close={() => setStatsOpen(false)}
-        distanceUnit={settingsData.distanceUnit}
-      />
+      <Stats isOpen={statsOpen} close={() => setStatsOpen(false)} />
       <div className="flex justify-center flex-auto dark:bg-slate-800 dark:text-slate-50">
         <div className="w-full max-w-lg flex flex-col">
           <header className="border-b-2 px-3 border-gray-200 flex">

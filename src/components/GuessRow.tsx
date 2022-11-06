@@ -144,7 +144,7 @@ export function GuessRow({
               text={getResultEmoji(guess, targetBreed)}
             />
           )}
-          <p className="flex items-center justify-start h-8 col-span-6 animate-reveal text-ellipsis overflow-hidden whitespace-nowrap">
+          <p className="flex items-center justify-start h-8 col-span-6 animate-reveal text-ellipsis overflow-hidden whitespace-nowrap font-bold">
             {guessedName}
           </p>
           <Twemoji

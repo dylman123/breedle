@@ -4,6 +4,7 @@ import React from "react";
 import { Breedle } from "../Breedle";
 import { SettingsData } from "../../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
+import { breeds } from "../../domain/breeds.mapping";
 
 interface InfosProps {
   isOpen: boolean;
@@ -12,6 +13,8 @@ interface InfosProps {
 }
 
 export function Infos({ isOpen, close, settingsData }: InfosProps) {
+  const exampleTarget = breeds.find((b) => b.code === "french_bulldog");
+
   return (
     <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
@@ -25,36 +28,38 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <ul>
           <li>
-            Incorrect:
+            Incorrect:{" "}
             <Twemoji text="💩" options={{ className: "inline-block" }} />
           </li>
           <li>
-            Correct:
+            Correct:{" "}
             <Twemoji text="🦴" options={{ className: "inline-block" }} />
           </li>
         </ul>
       </div>
-      {/* <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Examples</div>
         <div>
           <Guesses
             rowCount={1}
             guesses={[
               {
-                name: "Chile",
-                direction: "NE",
-                distance: 13_557_000,
-                code: "chile",
+                code: "golden_retriever",
+                name: "Golden Retriever",
+                group: 3,
+                origin: ["GB"],
+                size: [2],
+                correct: false,
               },
             ]}
+            targetBreed={exampleTarget}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your guess <span className="uppercase font-bold">Chile</span> is{" "}
-            {formatDistance(13557000, settingsData.distanceUnit)} away from the
-            target location, the target location is in the North-East direction
-            and you have a only 32% of proximity because it&apos;s quite far
-            away!
+            Your guess{" "}
+            <span className="uppercase font-bold">Golden Retriever</span> is in
+            the wrong group, from the wrong origin and has a different height to
+            the secret breed.
           </div>
         </div>
         <div>
@@ -62,19 +67,22 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Finland",
-                direction: "SE",
-                distance: 3_206_000,
-                code: "finland",
+                code: "poodle",
+                name: "Poodle",
+                group: 7,
+                origin: ["FR", "DE"],
+                size: [1, 2],
+                correct: false,
               },
             ]}
+            targetBreed={exampleTarget}
             settingsData={settingsData}
           />
           <div className="my-2">
             Your second guess{" "}
-            <span className="uppercase font-bold">Finland</span> is getting
-            closer! {formatDistance(3206000, settingsData.distanceUnit)} away,
-            South-East direction and 84%!
+            <span className="uppercase font-bold">Poodle</span> is getting
+            closer! The group is correct, one of the origins is correct and one
+            of the height categories is correct!
           </div>
         </div>
         <div>
@@ -82,21 +90,25 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Lebanon",
-                direction: "N",
-                distance: 0,
-                code: "lebanon",
+                code: "french_bulldog",
+                name: "French Bulldog",
+                group: 7,
+                origin: ["FR"],
+                size: [1],
+                correct: true,
               },
             ]}
+            targetBreed={exampleTarget}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Next guess, <span className="uppercase font-bold">Lebanon</span>,
-            it&apos;s the location to guess! Congrats!{" "}
-            <Twemoji text="🎉" options={{ className: "inline-block" }} />
+            Your next guess,{" "}
+            <span className="uppercase font-bold">French Bulldog</span>, is the
+            correct breed of the day! Congrats you found the bone!{" "}
+            <Twemoji text="🦴" options={{ className: "inline-block" }} />
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
         A new <Breedle /> will be available every day!
       </div>
