@@ -110,59 +110,13 @@ export function isOriginCorrect(
   }
 }
 
-export function calculateSizeMatch(guess?: Guess, target?: Breed) {
-  if (!guess || !target) {
-    return {
-      minG: 0,
-      maxG: 0,
-      minT: 0,
-      maxT: 0,
-      overlap: 0,
-      percentOverlap: 0,
-      lengthT: 0,
-    };
+export function isSizeCorrect(
+  guessSize?: number,
+  targetSizes?: readonly number[]
+) {
+  if (!guessSize || !targetSizes) {
+    return false;
   } else {
-    const minG = Math.min(...heights[Math.min(...guess.size)]);
-    const maxG = Math.max(...heights[Math.max(...guess.size)]);
-    const minT = Math.min(...heights[Math.min(...target.size)]);
-    const maxT = Math.max(...heights[Math.max(...target.size)]);
-
-    const overlap = Math.max(
-      0, // ensure lowest value possible is 0
-      minG < minT ? maxG - minT : maxT - minG
-    );
-    const lengthT = maxT - minT;
-    // ensure highest value possible is 100
-    const percentOverlap = Math.min(100, (overlap / lengthT) * 100);
-
-    const sizeData = {
-      minG,
-      maxG,
-      minT,
-      maxT,
-      overlap,
-      percentOverlap,
-      lengthT,
-    };
-
-    return sizeData;
+    return targetSizes.includes(guessSize);
   }
-}
-
-export function generateSizeMap(
-  min: number,
-  max: number,
-  index: number
-): string[] {
-  const squares = new Array<string>(36);
-  const colors = ["🟨", "🟦"];
-
-  squares.fill("-", 2, 33);
-  squares[0] = index == 0 ? '1"' : " ";
-  squares[1] = " ";
-  squares[34] = " ";
-  squares[35] = index == 0 ? '32"' : " ";
-  squares.fill(colors[index], min, max);
-
-  return squares;
 }
