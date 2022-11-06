@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 // import { InfosPl } from "./components/panels/InfosPl";
 // import { InfosDe } from "./components/panels/InfosDe";
 // import { InfosJa } from "./components/panels/InfosJa";
-import { Settings } from "./components/panels/Settings";
+// import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
 import { Breedle } from "./components/Breedle";
 import { Stats } from "./components/panels/Stats";
@@ -29,7 +29,7 @@ export default function App() {
   const [{ breed }] = useTodays(dayString);
 
   const [infoOpen, setInfoOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  // const [settingsOpen, setSettingsOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
 
   const [settingsData, updateSettings] = useSettings();

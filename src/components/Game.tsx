@@ -19,7 +19,6 @@ import { Twemoji } from "@teuteuf/react-emoji-render";
 import { breeds } from "../domain/breeds.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
-const ENABLE_TWITCH_LINK = false;
 const MAX_TRY_COUNT = 6;
 
 interface GameProps {
@@ -105,7 +104,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     if (
       breed &&
       guesses.length === MAX_TRY_COUNT &&
-      guesses[guesses.length - 1].code != breed.code
+      guesses[guesses.length - 1].code !== breed.code
     ) {
       toastId = toast.info(
         getBreedName(i18n.resolvedLanguage, breed).toUpperCase(),

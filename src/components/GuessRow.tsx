@@ -1,17 +1,15 @@
 import {
   generateDogCharacters,
   getResultEmoji,
-  isNameCorrect,
   isGroupCorrect,
   isOriginCorrect,
   isSizeCorrect,
 } from "../domain/util";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
-import CountUp from "react-countup";
 import { SettingsData } from "../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { Breed, getBreedName, sanitizeBreedName } from "../domain/breeds";
+import { Breed } from "../domain/breeds";
 import { groupNames } from "../domain/groups.mapping";
 import { originNames } from "../domain/origins.mapping";
 import { heights } from "../domain/sizes.mapping";
@@ -33,8 +31,8 @@ export function GuessRow({
   settingsData,
   breedInputRef,
 }: GuessRowProps) {
-  const { i18n } = useTranslation();
-  const { distanceUnit, theme } = settingsData;
+  // const { i18n } = useTranslation();
+  const { theme } = settingsData;
   const squares = generateDogCharacters(theme);
 
   const guessedName = guess?.name;

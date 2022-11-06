@@ -1,5 +1,5 @@
 import React from "react";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+// import { Twemoji } from "@teuteuf/react-emoji-render";
 
 export function Breedle() {
   return (

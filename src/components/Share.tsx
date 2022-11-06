@@ -23,13 +23,13 @@ interface ShareProps {
 export function Share({
   guesses,
   dayString,
-  settingsData,
-  hideImageMode,
-  rotationMode,
+  // settingsData,
+  // hideImageMode,
+  // rotationMode,
   breed,
 }: ShareProps) {
   const { t } = useTranslation();
-  const { theme } = settingsData;
+  // const { theme } = settingsData;
 
   const shareText = useMemo(() => {
     const win = guesses[guesses.length - 1]?.code === breed.code;
