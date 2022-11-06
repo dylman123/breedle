@@ -9,7 +9,6 @@ import React, {
 import { toast } from "react-toastify";
 import { getBreedName, sanitizeBreedName } from "../domain/breeds";
 import { BreedInput } from "./BreedInput";
-import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
 import { useTranslation } from "react-i18next";
@@ -18,10 +17,7 @@ import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { breeds } from "../domain/breeds.mapping";
-import { originNames } from "../domain/origins.mapping";
-import { groupNames } from "../domain/groups.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
-import { heights } from "../domain/sizes.mapping";
 
 const ENABLE_TWITCH_LINK = false;
 const MAX_TRY_COUNT = 6;
