@@ -1,8 +1,5 @@
 import {
-  computeProximityPercent,
-  formatDistance,
-  generateSquareCharacters,
-  getDirectionEmoji,
+  generateDogCharacters,
   getResultEmoji,
   isNameCorrect,
   isGroupCorrect,
@@ -15,12 +12,9 @@ import CountUp from "react-countup";
 import { SettingsData } from "../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { Breed, getBreedName, sanitizeBreedName } from "../domain/breeds";
-import { areas } from "../domain/breeds.area";
-import { breeds } from "../domain/breeds.mapping";
 import { groupNames } from "../domain/groups.mapping";
 import { originNames } from "../domain/origins.mapping";
 import { heights } from "../domain/sizes.mapping";
-// import { sizeNames } from "../domain/sizes.mapping";
 import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;
@@ -41,8 +35,7 @@ export function GuessRow({
 }: GuessRowProps) {
   const { i18n } = useTranslation();
   const { distanceUnit, theme } = settingsData;
-  const proximity = guess != null ? computeProximityPercent(guess.distance) : 0;
-  const squares = generateSquareCharacters(proximity, theme);
+  const squares = generateDogCharacters(theme);
 
   const guessedName = guess?.name;
 

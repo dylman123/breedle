@@ -1,9 +1,3 @@
-// Source:
-// Breeds with long/lat => https://developers.google.com/public-data/docs/canonical/breeds_csv
-// Breeds images => https://github.com/djaiss/mapsicon
-// Breed area => https://github.com/samayo/breed-json/blob/master/src/breed-by-surface-area.json
-
-import { areas } from "./breeds.area";
 import { breeds } from "./breeds.mapping";
 import { breedCodesWithImage } from "./breeds.image";
 
@@ -17,8 +11,6 @@ import { breedCodesWithImage } from "./breeds.image";
 
 export interface Breed {
   code: string;
-  latitude: number;
-  longitude: number;
   name: string;
   image: number;
   group: number;
@@ -28,11 +20,6 @@ export interface Breed {
 
 export const breedsWithImage = breeds.filter((c) =>
   breedCodesWithImage.includes(c.code.toLowerCase())
-);
-
-export const smallBreedLimit = 5000;
-export const bigEnoughBreedsWithImage = breedsWithImage.filter(
-  (breed) => areas[breed.code] > smallBreedLimit
 );
 
 export function getBreedName(language: string, breed: Breed) {

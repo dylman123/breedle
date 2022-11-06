@@ -1,13 +1,7 @@
 import { DateTime } from "luxon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import seedrandom from "seedrandom";
-import {
-  bigEnoughBreedsWithImage,
-  breedsWithImage,
-  Breed,
-  smallBreedLimit,
-} from "../domain/breeds";
-import { areas } from "../domain/breeds.area";
+import { breedsWithImage, Breed } from "../domain/breeds";
 import { BreedCode } from "../domain/breeds.mapping";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
@@ -90,14 +84,11 @@ export function useTodays(dayString: string): [
 function getBreed(dayString: string) {
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
   let pickingDate = DateTime.fromFormat("2022-03-21", "yyyy-MM-dd");
-  let smallBreedCooldown = 0;
   let pickedBreed: Breed | null = null;
 
   const lastPickDates: Record<string, DateTime> = {};
 
   do {
-    smallBreedCooldown--;
-
     const pickingDateString = pickingDate.toFormat("yyyy-MM-dd");
 
     const forcedBreedCode = forcedBreeds[dayString];
@@ -106,8 +97,7 @@ function getBreed(dayString: string) {
         ? breedsWithImage.find((breed) => breed.code === forcedBreedCode)
         : undefined;
 
-    const breedSelection =
-      smallBreedCooldown < 0 ? breedsWithImage : bigEnoughBreedsWithImage;
+    const breedSelection = breedsWithImage;
 
     if (forcedBreed != null) {
       pickedBreed = forcedBreed;
@@ -124,10 +114,6 @@ function getBreed(dayString: string) {
           pickedBreed = breedSelection[breedIndex];
         }
       }
-    }
-
-    if (areas[pickedBreed.code] < smallBreedLimit) {
-      smallBreedCooldown = 7;
     }
 
     lastPickDates[pickedBreed.code] = pickingDate;

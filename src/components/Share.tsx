@@ -3,12 +3,7 @@ import { useMemo } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import {
-  computeProximityPercent,
-  generateSquareCharacters,
-  getDirectionEmoji,
-  getResultEmoji,
-} from "../domain/util";
+import { getResultEmoji } from "../domain/util";
 import { Guess } from "../domain/guess";
 import { Breed } from "../domain/breeds";
 import React from "react";
@@ -37,36 +32,24 @@ export function Share({
   const { theme } = settingsData;
 
   const shareText = useMemo(() => {
-    const win = guesses[guesses.length - 1]?.distance === 0;
-    const bestDistance = Math.min(...guesses.map(({ distance }) => distance));
+    const win = guesses[guesses.length - 1]?.code === breed.code;
     const guessCount = win ? guesses.length : "X";
     const dayCount = Math.floor(
       Interval.fromDateTimes(START_DATE, DateTime.fromISO(dayString)).length(
         "day"
       )
     );
-    const difficultyModifierEmoji = hideImageMode
-      ? " 🙈"
-      : rotationMode
-      ? " 🌀"
-      : "";
-    const bestPercent = `(${computeProximityPercent(
-      bestDistance
-    ).toString()}%)`;
-    // const title = `#Breedle #${dayCount} ${guessCount}/6 ${bestPercent}${difficultyModifierEmoji}`;
     const title = `Breedle #${dayCount} ${guessCount}/6`;
 
     const guessString = guesses
       .map((guess) => {
-        // const percent = computeProximityPercent(guess.distance);
-        // const squares = generateSquareCharacters(percent, theme).join("");
         const result = getResultEmoji(guess, breed);
         return `${result}`;
       })
       .join("");
 
     return [title, guessString, "https://breedle.com.au"].join("\n");
-  }, [dayString, guesses, hideImageMode, rotationMode, breed]);
+  }, [dayString, guesses, breed]);
 
   return (
     <CopyToClipboard

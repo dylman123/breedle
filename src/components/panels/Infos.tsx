@@ -2,7 +2,6 @@ import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
 import React from "react";
 import { Breedle } from "../Breedle";
-import { formatDistance } from "../../domain/util";
 import { SettingsData } from "../../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 

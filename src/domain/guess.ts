@@ -1,13 +1,10 @@
-import { Direction } from "./util";
-
 export interface Guess {
   name: string;
-  distance: number;
-  direction: Direction;
   code: string;
   group: number;
   origin: readonly string[];
   size: readonly number[];
+  correct: boolean;
 }
 
 export function loadAllGuesses(): Record<string, Guess[]> {

@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { breedCodesWithImage } from "./breeds.image";
 import { loadAllGuesses } from "./guess";
 
 export interface StatsData {
@@ -28,11 +29,10 @@ export function getStatsData(): StatsData {
   let currentStreak = 0;
   let maxStreak = 0;
   let previousDate: DateTime | undefined;
-  let bestDistanceSum = 0;
+  const bestDistanceSum = 0;
   for (const [dayString, guesses] of allGuessesEntries) {
-    bestDistanceSum += Math.min(...guesses.map((guess) => guess.distance));
     const currentDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
-    const winIndex = guesses.findIndex((guess) => guess.distance === 0);
+    const winIndex = guesses.findIndex((guess) => guess.correct === true);
     const won = winIndex >= 0;
     if (won) {
       const tryCount = (winIndex + 1) as 1 | 2 | 3 | 4 | 5 | 6;

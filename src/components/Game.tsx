@@ -94,13 +94,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         group: currentGuessObject?.group ?? 0,
         origin: currentGuessObject?.origin ?? [],
         size: currentGuessObject?.size ?? [],
-        distance: geolib.getDistance(guessedBreed, breed),
-        direction: geolib.getCompassDirection(
-          guessedBreed,
-          breed,
-          (origin, dest) =>
-            Math.round(geolib.getRhumbLineBearing(origin, dest) / 45) * 45
-        ),
+        correct: currentGuessObject?.code === breed.code,
       };
 
       addGuess(newGuess);
@@ -119,7 +113,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     if (
       breed &&
       guesses.length === MAX_TRY_COUNT &&
-      guesses[guesses.length - 1].distance > 0
+      guesses[guesses.length - 1].code != breed.code
     ) {
       toastId = toast.info(
         getBreedName(i18n.resolvedLanguage, breed).toUpperCase(),
@@ -225,19 +219,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               <div className="font-bold text-center block mt-4 whitespace-nowrap">
                 {breedName}
               </div>
-              {/* <a
-                className="underline text-center block mt-4 whitespace-nowrap"
-                href={`https://www.google.com/maps?q=${breedName}+${breed.code.toUpperCase()}&hl=${
-                  i18n.resolvedLanguage
-                }`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twemoji
-                  text={t("showOnGoogleMaps")}
-                  options={{ className: "inline-block" }}
-                />
-              </a> */}
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${breedName}`}
@@ -250,38 +231,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 />
               </a>
             </div>
-            {/* {ENABLE_TWITCH_LINK && (
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  className="underline text-center block mt-4 whitespace-nowrap"
-                  href="https://www.twitch.tv/t3uteuf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twemoji
-                    text="More? Play on Twitch! 👾"
-                    options={{ className: "inline-block" }}
-                  />
-                </a>
-              </div>
-            )} */}
-            {/* <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                className="underline text-center block mt-4 whitespace-nowrap"
-                href="https://emovi.teuteuf.fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twemoji
-                  text={
-                    dayString === "2022-07-17"
-                      ? "Let's celebrate #WorldEmojiDay! Play Emovi! 🎥"
-                      : "Try my new game, play Emovi! 🎥"
-                  }
-                  options={{ className: "inline-block" }}
-                />
-              </a>
-            </div> */}
           </>
         ) : (
           <form onSubmit={handleSubmit}>
