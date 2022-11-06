@@ -215,10 +215,21 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               rotationMode={rotationMode}
               breed={breed}
             />
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center">
               <div className="font-bold text-center block mt-4 whitespace-nowrap">
                 {breedName}
               </div>
+              <a
+                className="underline text-center block mt-4 whitespace-nowrap"
+                href={`https://dogsaustralia.org.au/members/breeds/breed-standards/${breedName}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twemoji
+                  text={t("showOnANKC")}
+                  options={{ className: "inline-block" }}
+                />
+              </a>
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
                 href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${breedName}`}

@@ -136,7 +136,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Breeds categorised by origin
+            Breeds categorised by Origin
           </a>
         </div>
         <div>
@@ -146,7 +146,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Breeds categorised by height
+            Breeds categorised by Height
           </a>
         </div>
       </div>

@@ -9,6 +9,7 @@ export const translations = {
       guess: "Guess",
       share: "Share",
       showOnGoogleMaps: "👀 on Google Maps",
+      showOnANKC: "👀 the breed standard",
       showOnWikipedia: "📚 on Wikipedia",
       welldone: "Well done!",
       unknownBreed: "Unknown breed!",
