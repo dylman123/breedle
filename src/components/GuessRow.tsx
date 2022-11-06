@@ -15,7 +15,7 @@ import { originNames } from "../domain/origins.mapping";
 import { heights } from "../domain/sizes.mapping";
 // import { useTranslation } from "react-i18next";
 
-const SQUARE_ANIMATION_LENGTH = 250;
+const DOGFACE_ANIMATION_LENGTH = 250;
 type AnimationState = "NOT_STARTED" | "RUNNING" | "ENDED";
 
 interface GuessRowProps {
@@ -92,7 +92,7 @@ export function GuessRow({
     setAnimationState("RUNNING");
     const timeout = setTimeout(() => {
       setAnimationState("ENDED");
-    }, SQUARE_ANIMATION_LENGTH * 6);
+    }, DOGFACE_ANIMATION_LENGTH * 6);
 
     return () => {
       clearTimeout(timeout);
@@ -124,7 +124,7 @@ export function GuessRow({
                 key={index}
                 className="opacity-0 animate-reveal"
                 style={{
-                  animationDelay: `${SQUARE_ANIMATION_LENGTH * index}ms`,
+                  animationDelay: `${DOGFACE_ANIMATION_LENGTH * index}ms`,
                 }}
               >
                 <Twemoji text={character} />
@@ -150,7 +150,7 @@ export function GuessRow({
             text="📒"
           />
           <div
-            className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded overflow-hidden ${
+            className={`flex items-center justify-center border-2 h-8 col-span-6 animate-reveal rounded overflow-hidden text-white ${
               isGroupCorrect(guess, targetBreed) ? "bg-green-500" : "bg-black"
             }`}
           >
@@ -160,14 +160,15 @@ export function GuessRow({
             className="flex items-center justify-center h-8 col-span-1 animate-reveal"
             text="🌏"
           />
-          <div className={`col-span-6 animate-reveal`}>{guessedOrigin}</div>
+          <div className={`col-span-6 animate-reveal text-white`}>
+            {guessedOrigin}
+          </div>
           <Twemoji
             className="flex items-center justify-center h-8 col-span-1 animate-reveal"
             text="📏"
           />
           <div
-            // className={`flex items-center justify-center h-8 col-span-6 animate-reveal rounded border-2 ${sizeBgColor}`}
-            className={`flex items-center justify-start h-8 col-span-6 animate-reveal`}
+            className={`flex items-center justify-start h-8 col-span-6 animate-reveal text-white`}
           >
             {guessedSize}
           </div>
