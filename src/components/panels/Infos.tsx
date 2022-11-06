@@ -112,21 +112,44 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
         A new <Breedle /> will be available every day!
       </div>
-      {/* <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">Any question or suggestion?</div>
+      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+        <Breedle /> only uses ANKC recognised breeds. With{" "}
+        <Twemoji text="❤️" options={{ className: "inline-block" }} /> from
+        Australia.
+      </div>
+      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+        <div className="font-bold">Sources</div>
         <div>
-          Check the{" "}
           <a
             className="underline"
-            href="https://worldle.notion.site/Breedle-b84ab0f002e34866980a4d47cf9291b7"
+            href="https://dogsaustralia.org.au/media/9641/breed-listing-breeds-19-11-2021-2.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Breedle FAQ
+            Dogs Australia (ANKC) Breeds by Group
           </a>
-          !
         </div>
-      </div> */}
+        <div>
+          <a
+            className="underline"
+            href="https://en.wikipedia.org/wiki/Category:Dog_breeds_by_country_of_origin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Breeds categorised by origin
+          </a>
+        </div>
+        <div>
+          <a
+            className="underline"
+            href="https://www.dogsindepth.com/dog_breed_size_chart.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Breeds categorised by height
+          </a>
+        </div>
+      </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <Breedle /> has been <span className="font-bold">heavily</span> inspired
         by{" "}
@@ -160,7 +183,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           >
             source code
           </a>
-          ) - in connection with .
+          ) - in connection with{" "}
           <a
             className="underline"
             href="https://www.heydoggydoor.com.au/"
@@ -183,6 +206,17 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
               text="Buy me a coffee! ☕"
               options={{ className: "inline-block" }}
             />
+          </a>
+        </div>
+        <div>
+          Any questions or suggestions?{" "}
+          <a
+            className="underline"
+            href="mailto:support@doggydoor.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Send me an email!
           </a>
         </div>
       </div>

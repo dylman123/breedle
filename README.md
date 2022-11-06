@@ -20,6 +20,7 @@ If you'd like to make a suggestion, don't hesitate to open an issue! Otherwise, 
 ## Resources used:
 
 - Breed images => https://www.pinterest.com.au/pin/420031102721863936
+- ANKC breeds by group => https://dogsaustralia.org.au/media/9641/breed-listing-breeds-19-11-2021-2.pdf
 - Breed sizes => https://www.dogsindepth.com/dog_breed_size_chart.html
 - Breed origins => https://en.wikipedia.org/wiki/Category:Dog_breeds_by_country_of_origin
 - Emojis & Dog icon => https://github.com/twitter/twemoji
