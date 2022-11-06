@@ -13,7 +13,7 @@ import { Breed } from "../domain/breeds";
 import { groupNames } from "../domain/groups.mapping";
 import { originNames } from "../domain/origins.mapping";
 import { heights } from "../domain/sizes.mapping";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;
 type AnimationState = "NOT_STARTED" | "RUNNING" | "ENDED";
