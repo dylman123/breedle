@@ -28,7 +28,7 @@ export function Settings({
       debugAction={() => setDebugEnabled(true)}
     >
       <div className="my-4 flex flex-col gap-2">
-        <div className="flex p-1">
+        {/* <div className="flex p-1">
           <select
             id="setting-distanceUnit"
             className="h-8 dark:bg-slate-800 w-16 p-1"
@@ -46,7 +46,7 @@ export function Settings({
           >
             {t("settings.distanceUnit")}
           </label>
-        </div>
+        </div> */}
         <div className="flex p-1">
           <select
             id="setting-theme"
@@ -66,7 +66,7 @@ export function Settings({
             {t("settings.theme")}
           </label>
         </div>
-        <div className="flex p-1">
+        {/* <div className="flex p-1">
           <select
             id="setting-language"
             className="h-8 dark:bg-slate-800 w-16 p-1"
@@ -85,9 +85,9 @@ export function Settings({
           >
             {t("settings.language")}
           </label>
-        </div>
+        </div> */}
       </div>
-      <div className="my-4 flex flex-col gap-2">
+      {/* <div className="my-4 flex flex-col gap-2">
         <header className="my-2">
           <h3 className="text-lg font-bold">
             {t("settings.difficultyModifiers")}
@@ -129,7 +129,7 @@ export function Settings({
             {t("settings.rotationMode")}
           </label>
         </div>
-      </div>
+      </div> */}
       {debugEnabled && (
         <div className="my-4">
           <header className="my-2">

@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 // import { InfosPl } from "./components/panels/InfosPl";
 // import { InfosDe } from "./components/panels/InfosDe";
 // import { InfosJa } from "./components/panels/InfosJa";
-// import { Settings } from "./components/panels/Settings";
+import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
 import { Breedle } from "./components/Breedle";
 import { Stats } from "./components/panels/Stats";
@@ -29,7 +29,7 @@ export default function App() {
   const [{ breed }] = useTodays(dayString);
 
   const [infoOpen, setInfoOpen] = useState(false);
-  // const [settingsOpen, setSettingsOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
 
   const [settingsData, updateSettings] = useSettings();
@@ -86,12 +86,12 @@ export default function App() {
         close={() => setInfoOpen(false)}
         settingsData={settingsData}
       />
-      {/* <Settings
+      <Settings
         isOpen={settingsOpen}
         close={() => setSettingsOpen(false)}
         settingsData={settingsData}
         updateSettings={updateSettings}
-      /> */}
+      />
       <Stats isOpen={statsOpen} close={() => setStatsOpen(false)} />
       <div className="flex justify-center flex-auto dark:bg-slate-800 dark:text-slate-50">
         <div className="w-full max-w-lg flex flex-col">
@@ -113,13 +113,13 @@ export default function App() {
             >
               <Twemoji text="📈" />
             </button>
-            {/* <button
+            <button
               className="ml-3 text-xl"
               type="button"
               onClick={() => setSettingsOpen(true)}
             >
               <Twemoji text="⚙️" />
-            </button> */}
+            </button>
           </header>
           <Game settingsData={settingsData} updateSettings={updateSettings} />
           <footer className="flex justify-center items-center mt-8 mb-4">
