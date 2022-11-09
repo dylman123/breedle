@@ -186,7 +186,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           ) - in connection with{" "}
           <a
             className="underline"
-            href="https://www.heydoggydoor.com.au/"
+            href="https://www.heydoggydoor.com.au/breeder"
             target="_blank"
             rel="noopener noreferrer"
           >

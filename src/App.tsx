@@ -103,9 +103,22 @@ export default function App() {
             >
               <Twemoji text="❓" />
             </button>
-            <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto flex justify-center">
-              <Breedle />
-            </h1>
+            <div className="tracking-wide text-center my-1 flex-auto flex justify-center flex-col">
+              <h1 className="text-3xl font-bold uppercase">
+                <Breedle />
+              </h1>
+              <p className="text-sm">
+                Created by{" "}
+                <a
+                  href="https://www.heydoggydoor.com.au/breeder"
+                  className="underline underline-offset-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DoggyDoor
+                </a>
+              </p>
+            </div>
             <button
               className="ml-3 text-xl"
               type="button"
