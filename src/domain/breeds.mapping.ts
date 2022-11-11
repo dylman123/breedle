@@ -1219,7 +1219,7 @@ export const breeds = [
     name: "Maltese",
     image: 154,
     group: 1,
-    origin: ["IT, MT"],
+    origin: ["IT", "MT"],
     size: [1],
   },
   {
