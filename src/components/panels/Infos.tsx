@@ -187,8 +187,6 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           <a
             className="underline"
             href="https://www.heydoggydoor.com.au/breeder"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             DoggyDoor
           </a>

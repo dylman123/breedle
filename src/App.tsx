@@ -112,8 +112,6 @@ export default function App() {
                 <a
                   href="https://www.heydoggydoor.com.au/breeder"
                   className="underline underline-offset-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   DoggyDoor
                 </a>
