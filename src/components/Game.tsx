@@ -159,7 +159,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           </button>
         )}
         <img
-          className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in mt-4 ${
+          className={`pointer-events-none max-h-32 m-auto transition-transform duration-700 ease-in mt-4 ${
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
           alt="dog breed to guess"
