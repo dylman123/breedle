@@ -236,7 +236,7 @@ export const breeds = [
     image: 430,
     group: 6,
     origin: ["CH"],
-    size: [2],
+    size: [2, 3],
   },
   {
     code: "bichon_frise",
