@@ -22,8 +22,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.emote {
-  transform:rotate(25deg);
-  width:fit-content;
-}

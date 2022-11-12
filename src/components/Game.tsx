@@ -18,6 +18,7 @@ import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { breeds } from "../domain/breeds.mapping";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
+import ConfettiExplosion from "react-confetti-explosion";
 
 const MAX_TRY_COUNT = 6;
 
@@ -45,6 +46,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
   );
 
   const [currentGuess, setCurrentGuess] = useState("");
+  const [isExploding, setIsExploding] = useState(false);
   const [hideImageMode, setHideImageMode] = useMode(
     "hideImageMode",
     dayString,
@@ -92,7 +94,14 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       setCurrentGuess("");
 
       if (guessedBreed === breed) {
-        toast.success(t("welldone"), { delay: 2000 });
+        toast.success(t("welldone"), {
+          delay: 2000,
+          autoClose: 10000,
+          hideProgressBar: false,
+          position: "top-center",
+          pauseOnHover: false,
+        });
+        setIsExploding(true);
       }
     },
     [addGuess, breed, currentGuess, i18n.resolvedLanguage, t]
@@ -195,6 +204,17 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         settingsData={settingsData}
         breedInputRef={breedInputRef}
       />
+      {isExploding && (
+        <div className="overflow-visible flex justify-center">
+          <ConfettiExplosion
+            height={2 * window.outerHeight}
+            width={2 * window.outerWidth}
+            force={0.8}
+            particleCount={300}
+            duration={5000}
+          />
+        </div>
+      )}
       <div className="my-2">
         {gameEnded && breed ? (
           <>

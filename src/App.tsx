@@ -93,7 +93,7 @@ export default function App() {
         updateSettings={updateSettings}
       />
       <Stats isOpen={statsOpen} close={() => setStatsOpen(false)} />
-      <div className="flex justify-center flex-auto dark:bg-gradient-to-l from-indigo-900 to-blue-700 dark:text-slate-50">
+      <div className="flex justify-center flex-auto dark:bg-gradient-to-l from-indigo-900 to-blue-700 dark:text-slate-50 overflow-hidden">
         <div className="w-full max-w-lg flex flex-col">
           <header className="border-b-2 px-3 border-gray-200 flex">
             <button

@@ -11,7 +11,7 @@ export const translations = {
       showOnGoogleMaps: "👀 on Google Maps",
       showOnANKC: "👀 the breed standard",
       showOnWikipedia: "📚 on Wikipedia",
-      welldone: "Well done!",
+      welldone: "Nice one! That's correct!",
       unknownBreed: "Unknown breed!",
       copy: "Copied results to clipboard",
       showBreed: "🗺️ Show map!",
