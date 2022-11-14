@@ -19,7 +19,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
     <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Breedle /> in 6 guesses to get the bone and avoid the poop.
+          Can you guess the <Breedle /> of the day in 6 guesses?
         </div>
         <div>Each guess must be a valid dog breed.</div>
         <div>
@@ -29,11 +29,11 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         <ul>
           <li>
             Incorrect:{" "}
-            <Twemoji text="💩" options={{ className: "inline-block" }} />
+            <Twemoji text="❌" options={{ className: "inline-block" }} />
           </li>
           <li>
             Correct:{" "}
-            <Twemoji text="🦴" options={{ className: "inline-block" }} />
+            <Twemoji text="✅" options={{ className: "inline-block" }} />
           </li>
         </ul>
       </div>
@@ -104,8 +104,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           <div className="my-2">
             Your next guess,{" "}
             <span className="uppercase font-bold">French Bulldog</span>, is the
-            correct breed of the day! Congrats you found the bone!{" "}
-            <Twemoji text="🦴" options={{ className: "inline-block" }} />
+            correct breed of the day! Congrats! Click the &#34;Share&#34; button
+            to show off your win.
           </div>
         </div>
       </div>

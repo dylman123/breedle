@@ -1,14 +1,18 @@
 import { Breed } from "./breeds";
 import { Guess } from "./guess";
 
-export function getResultEmoji(guess: Guess, targetBreed: Breed) {
-  return guess.code === targetBreed.code ? "🦴" : "💩";
-}
-
 export function generateDogCharacters(theme: "light" | "dark"): string[] {
   const characters = new Array<string>(5);
   characters.fill("🐶", 0, 5);
   return characters;
+}
+
+export function getResultEmoji(guess?: Guess, target?: Breed) {
+  if (!guess || !target) {
+    return "";
+  } else {
+    return guess.code === target.code ? "✅" : "❌";
+  }
 }
 
 export function isNameCorrect(guess?: Guess, target?: Breed) {
