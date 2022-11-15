@@ -74,7 +74,7 @@ test('should match breed size', () => {
     expect(resultIncorrect).toBe(false);
 
     // Correct test
-    const resultCorrect = isOriginCorrect(poodle.size[0], target?.size);
+    const resultCorrect = isSizeCorrect(poodle.size[0], target?.size);
     expect(resultCorrect).toBe(true);
 });
 
