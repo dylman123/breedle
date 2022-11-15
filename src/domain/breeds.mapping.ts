@@ -1582,7 +1582,7 @@ export const breeds = [
     image: 122,
     group: 6,
     origin: ["DE"],
-    size: [2],
+    size: [2, 3],
   },
   {
     code: "russian_black_terrier",
