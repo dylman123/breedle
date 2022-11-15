@@ -1,3 +1,8 @@
+// 1) Run the following to generate a coverage report:
+// $ npm test -- --coverage .
+//
+// 2) Then open up `coverage/lcov-report/index.html` in the browser
+
 import { getResultEmoji, isNameCorrect, isGroupCorrect, isOriginCorrect, isSizeCorrect } from "./util";
 import { breeds } from './breeds.mapping';
 // import puppeteer from "puppeteer";
@@ -36,6 +41,10 @@ test('should display correct emoji', () => {
     // Correct test
     const emojiCorrect = getResultEmoji(frenchBulldog, target);
     expect(emojiCorrect).toBe("✅");
+
+    // Undefined test
+    const undef = getResultEmoji(undefined, undefined);
+    expect(undef).toBe("");
 });
 
 test('should match breed name', () => {
@@ -46,6 +55,10 @@ test('should match breed name', () => {
     // Correct test
     const resultCorrect = isNameCorrect(frenchBulldog, target);
     expect(resultCorrect).toBe(true);
+
+    // Undefined test
+    const undef = isNameCorrect(undefined, undefined);
+    expect(undef).toBe(false);
 });
 
 test('should match breed group', () => {
@@ -56,6 +69,10 @@ test('should match breed group', () => {
     // Correct test
     const resultCorrect = isGroupCorrect(poodle, target);
     expect(resultCorrect).toBe(true);
+
+    // Undefined test
+    const undef = isGroupCorrect(undefined, undefined);
+    expect(undef).toBe(false);
 });
 
 test('should match breed origin', () => {
@@ -66,6 +83,10 @@ test('should match breed origin', () => {
     // Correct test
     const resultCorrect = isOriginCorrect(poodle.origin[0], target?.origin);
     expect(resultCorrect).toBe(true);
+
+    // Undefined test
+    const undef = isOriginCorrect(undefined, undefined);
+    expect(undef).toBe(false);
 });
 
 test('should match breed size', () => {
@@ -76,6 +97,10 @@ test('should match breed size', () => {
     // Correct test
     const resultCorrect = isSizeCorrect(poodle.size[0], target?.size);
     expect(resultCorrect).toBe(true);
+
+    // Undefined test
+    const undef = isSizeCorrect(undefined, undefined);
+    expect(undef).toBe(false);
 });
 
 // The following code has a bug:
