@@ -4,6 +4,7 @@ export interface SettingsData {
   showScale: boolean;
   noImageMode: boolean;
   rotationMode: boolean;
+  easyMode: boolean;
   distanceUnit: "km" | "miles";
   theme: "light" | "dark";
   shiftDayCount: number;
@@ -15,6 +16,7 @@ const defaultSettingsData: SettingsData = {
   showScale: false,
   noImageMode: false,
   rotationMode: false,
+  easyMode: false,
   distanceUnit: "km",
   theme: window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"

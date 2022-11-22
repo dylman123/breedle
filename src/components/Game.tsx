@@ -38,7 +38,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const breedInputRef = useRef<HTMLInputElement>(null);
 
-  const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
+  const [todays, addGuess, randomAngle, imageScale] = useTodays(
+    dayString,
+    settingsData
+  );
   const { breed, guesses } = todays;
   const breedName = useMemo(
     () => (breed ? getBreedName(i18n.resolvedLanguage, breed) : ""),
