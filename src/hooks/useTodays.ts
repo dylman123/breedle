@@ -36,6 +36,7 @@ export function useTodays(
     breed?: Breed;
     guesses: Guess[];
   }>({ guesses: [] });
+  const easyMode = settingsData.easyMode;
 
   const addGuess = useCallback(
     (newGuess: Guess) => {
@@ -49,17 +50,17 @@ export function useTodays(
         breed: prev.breed,
         guesses: newGuesses,
       }));
-      saveGuesses(dayString, newGuesses);
+      saveGuesses(dayString, easyMode, newGuesses);
     },
-    [dayString, todays]
+    [dayString, todays, easyMode]
   );
 
   useEffect(() => {
-    const guesses = loadAllGuesses()[dayString] ?? [];
-    const breed = getBreed(dayString, settingsData);
+    const guesses = loadAllGuesses(easyMode)[dayString] ?? [];
+    const breed = getBreed(dayString, easyMode);
 
     setTodays({ breed, guesses });
-  }, [dayString, settingsData]);
+  }, [dayString, easyMode]);
 
   const randomAngle = useMemo(
     () => seedrandom.alea(dayString)() * 360,
@@ -75,7 +76,7 @@ export function useTodays(
   return [todays, addGuess, randomAngle, imageScale];
 }
 
-function getBreed(dayString: string, settingsData: SettingsData) {
+function getBreed(dayString: string, easyMode: boolean) {
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
   let pickingDate = DateTime.fromFormat("2022-11-22", "yyyy-MM-dd");
   let pickedBreed: Breed | null = null;
@@ -91,11 +92,7 @@ function getBreed(dayString: string, settingsData: SettingsData) {
         ? breedsWithImage.find((breed) => breed.code === forcedBreedCode)
         : undefined;
 
-    const breedSelection = settingsData.easyMode
-      ? commonBreeds
-      : breedsWithImage;
-
-    console.log({ commonBreeds });
+    const breedSelection = easyMode ? commonBreeds : breedsWithImage;
 
     if (forcedBreed != null) {
       pickedBreed = forcedBreed;

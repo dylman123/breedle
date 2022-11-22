@@ -12,7 +12,8 @@ export interface StatsData {
 }
 
 export function getStatsData(): StatsData {
-  const allGuesses = loadAllGuesses();
+  const allGuesses = loadAllGuesses(false);
+  // const allGuesses = loadAllGuesses(false);
 
   const allGuessesEntries = Object.entries(allGuesses);
   const played = allGuessesEntries.length;
