@@ -12,10 +12,15 @@ export interface StatsData {
 }
 
 export function getStatsData(): StatsData {
-  const allGuesses = loadAllGuesses(false);
-  // const allGuesses = loadAllGuesses(false);
+  const hardModeGuesses = loadAllGuesses(false);
+  const easyModeGuesses = loadAllGuesses(true);
 
-  const allGuessesEntries = Object.entries(allGuesses);
+  const hardModeGuessesEntries = Object.entries(hardModeGuesses);
+  const easyModeGuessesEntries = Object.entries(easyModeGuesses);
+  const allGuessesEntries = hardModeGuessesEntries.concat(
+    easyModeGuessesEntries
+  );
+
   const played = allGuessesEntries.length;
 
   const guessDistribution = {
