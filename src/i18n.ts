@@ -26,7 +26,7 @@ export const translations = {
         noImageMode: "Hide breed image for more of a challenge.",
         rotationMode: "Randomly rotate breed image.",
         advancedMode:
-          "Advanced mode (play with all ANKC recognised dog breeds)",
+          "Advanced mode (guess from a pool of 200 ANKC recognised dog breeds)",
         updateNotificationDisabled: "Disable update notifications.",
         showScale: "Replace proximity percent by size percent.",
       },
