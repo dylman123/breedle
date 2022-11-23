@@ -14,12 +14,14 @@ export interface StatsData {
 export function getStatsData(): StatsData {
   const hardModeGuesses = loadAllGuesses(false);
   const easyModeGuesses = loadAllGuesses(true);
+  const noModeGuesses = loadAllGuesses(null); // to maintain guesses before 'easyMode' was developed
 
   const hardModeGuessesEntries = Object.entries(hardModeGuesses);
   const easyModeGuessesEntries = Object.entries(easyModeGuesses);
-  const allGuessesEntries = hardModeGuessesEntries.concat(
-    easyModeGuessesEntries
-  );
+  const noModeGuessesEntries = Object.entries(noModeGuesses);
+  const allGuessesEntries = noModeGuessesEntries
+    .concat(hardModeGuessesEntries)
+    .concat(easyModeGuessesEntries);
 
   const played = allGuessesEntries.length;
 

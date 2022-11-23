@@ -7,7 +7,7 @@ export interface Guess {
   correct: boolean;
 }
 
-function selectStorageItem(easyMode: boolean): string {
+function selectStorageItem(easyMode: boolean | null): string {
   switch (easyMode) {
     case true:
       return "guesses-easy-mode";
@@ -18,7 +18,9 @@ function selectStorageItem(easyMode: boolean): string {
   }
 }
 
-export function loadAllGuesses(easyMode: boolean): Record<string, Guess[]> {
+export function loadAllGuesses(
+  easyMode: boolean | null
+): Record<string, Guess[]> {
   const storedGuesses = localStorage.getItem(selectStorageItem(easyMode));
   return storedGuesses != null ? JSON.parse(storedGuesses) : {};
 }
