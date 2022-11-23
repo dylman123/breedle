@@ -2,23 +2,31 @@ import { t } from "i18next";
 import React, { useState } from "react";
 import Autosuggest from "react-autosuggest";
 import { useTranslation } from "react-i18next";
-import { getBreedName, sanitizeBreedName } from "../domain/breeds";
-import { breeds } from "../domain/breeds.mapping";
-
+import {
+  getBreedName,
+  sanitizeBreedName,
+  commonBreeds,
+  allBreeds,
+} from "../domain/breeds";
+import { SettingsData } from "../hooks/useSettings";
 interface BreedInputProps {
   inputRef: React.RefObject<HTMLInputElement>;
   currentGuess: string;
   setCurrentGuess: (guess: string) => void;
+  settingsData: SettingsData;
 }
 
 export function BreedInput({
   inputRef,
   currentGuess,
   setCurrentGuess,
+  settingsData,
 }: BreedInputProps) {
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
   const { i18n } = useTranslation();
+
+  const breedList = settingsData.advancedMode ? allBreeds : commonBreeds;
 
   return (
     <Autosuggest
@@ -28,7 +36,7 @@ export function BreedInput({
       suggestions={suggestions}
       onSuggestionsFetchRequested={({ value }) =>
         setSuggestions(
-          breeds
+          breedList
             .map((c) => getBreedName(i18n.resolvedLanguage, c))
             .filter((breedName) =>
               sanitizeBreedName(breedName).includes(sanitizeBreedName(value))

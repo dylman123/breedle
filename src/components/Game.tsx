@@ -272,6 +272,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 inputRef={breedInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
+                settingsData={settingsData}
               />
               <button
                 className="rounded font-bold p-1 flex items-center justify-center border-2 uppercase my-0.5 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
