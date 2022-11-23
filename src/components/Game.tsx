@@ -162,11 +162,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             <Twemoji text="↪️" className="text-xl" />
           </button>
         )} */}
-        <div className="flex flex-col">
+        <div className="flex flex-col w-32 mt-4">
           <img
-            className={`pointer-events-none max-h-32 m-auto transition-transform duration-700 ease-in mt-4 ${
-              hideImageMode && !gameEnded ? "h-0" : "h-full"
-            }`}
+            className={`pointer-events-none object-contain transition-transform duration-700 ease-in`}
             alt="dog breed to guess"
             src={`images/breeds/${breed?.image}.jpg`}
             style={
