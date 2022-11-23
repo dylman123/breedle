@@ -160,7 +160,9 @@ export function GuessRow({
             className="flex items-center justify-center h-8 col-span-1 animate-reveal"
             text="🌏"
           />
-          <div className={`col-span-6 animate-reveal text-white`}>
+          <div
+            className={`col-span-6 animate-reveal text-white overflow-x-scroll`}
+          >
             {guessedOrigin}
           </div>
           <Twemoji
@@ -168,7 +170,7 @@ export function GuessRow({
             text="📏"
           />
           <div
-            className={`flex items-center justify-start h-8 col-span-6 animate-reveal text-white`}
+            className={`flex items-center justify-start h-8 col-span-6 animate-reveal text-white overflow-x-scroll`}
           >
             {guessedSize}
           </div>
