@@ -25,7 +25,8 @@ export const translations = {
         startingNextDay: "Starting the next day!",
         noImageMode: "Hide breed image for more of a challenge.",
         rotationMode: "Randomly rotate breed image.",
-        easyMode: "Easy mode (play only with well known breeds)",
+        advancedMode:
+          "Advanced mode (play with all ANKC recognised dog breeds)",
         updateNotificationDisabled: "Disable update notifications.",
         showScale: "Replace proximity percent by size percent.",
       },

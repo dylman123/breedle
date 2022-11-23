@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import seedrandom from "seedrandom";
-import { breedsWithImage, commonBreeds, Breed } from "../domain/breeds";
+import { allBreeds, commonBreeds, Breed } from "../domain/breeds";
 import { BreedCode } from "../domain/breeds.mapping";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 import { SettingsData } from "./useSettings";
@@ -36,7 +36,7 @@ export function useTodays(
     breed?: Breed;
     guesses: Guess[];
   }>({ guesses: [] });
-  const easyMode = settingsData.easyMode;
+  const advancedMode = settingsData.advancedMode;
 
   const addGuess = useCallback(
     (newGuess: Guess) => {
@@ -50,17 +50,17 @@ export function useTodays(
         breed: prev.breed,
         guesses: newGuesses,
       }));
-      saveGuesses(dayString, easyMode, newGuesses);
+      saveGuesses(dayString, advancedMode, newGuesses);
     },
-    [dayString, todays, easyMode]
+    [dayString, todays, advancedMode]
   );
 
   useEffect(() => {
-    const guesses = loadAllGuesses(easyMode)[dayString] ?? [];
-    const breed = getBreed(dayString, easyMode);
+    const guesses = loadAllGuesses(advancedMode)[dayString] ?? [];
+    const breed = getBreed(dayString, advancedMode);
 
     setTodays({ breed, guesses });
-  }, [dayString, easyMode]);
+  }, [dayString, advancedMode]);
 
   const randomAngle = useMemo(
     () => seedrandom.alea(dayString)() * 360,
@@ -76,7 +76,7 @@ export function useTodays(
   return [todays, addGuess, randomAngle, imageScale];
 }
 
-function getBreed(dayString: string, easyMode: boolean) {
+function getBreed(dayString: string, advancedMode: boolean) {
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
   let pickingDate = DateTime.fromFormat("2022-11-22", "yyyy-MM-dd");
   let pickedBreed: Breed | null = null;
@@ -89,10 +89,10 @@ function getBreed(dayString: string, easyMode: boolean) {
     const forcedBreedCode = forcedBreeds[dayString];
     const forcedBreed =
       forcedBreedCode != null
-        ? breedsWithImage.find((breed) => breed.code === forcedBreedCode)
+        ? allBreeds.find((breed) => breed.code === forcedBreedCode)
         : undefined;
 
-    const breedSelection = easyMode ? commonBreeds : breedsWithImage;
+    const breedSelection = advancedMode ? allBreeds : commonBreeds;
 
     if (forcedBreed != null) {
       pickedBreed = forcedBreed;

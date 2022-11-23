@@ -1,5 +1,5 @@
 import { breeds } from "./breeds.mapping";
-import { breedCodesWithImage } from "./breeds.image";
+import { allBreedCodes } from "./breeds.all";
 import { commonBreedCodes } from "./breeds.common";
 
 // import { corsicanBreedNames } from "./breeds.name.co";
@@ -19,8 +19,8 @@ export interface Breed {
   size: readonly number[];
 }
 
-export const breedsWithImage = breeds.filter((c) =>
-  breedCodesWithImage.includes(c.code.toLowerCase())
+export const allBreeds = breeds.filter((c) =>
+  allBreedCodes.includes(c.code.toLowerCase())
 );
 
 export const commonBreeds = breeds.filter((c) =>

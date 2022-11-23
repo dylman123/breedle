@@ -1,4 +1,4 @@
-export const breedCodesWithImage = [
+export const allBreedCodes = [
   "affenpinscher",
   "afghan_hound",
   "airedale_terrier",

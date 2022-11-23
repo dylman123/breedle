@@ -7,32 +7,32 @@ export interface Guess {
   correct: boolean;
 }
 
-function selectStorageItem(easyMode: boolean | null): string {
-  switch (easyMode) {
+function selectStorageItem(advancedMode: boolean | null): string {
+  switch (advancedMode) {
     case true:
-      return "guesses-easy-mode";
-    case false:
       return "guesses-hard-mode";
+    case false:
+      return "guesses-easy-mode";
     default:
       return "guesses";
   }
 }
 
 export function loadAllGuesses(
-  easyMode: boolean | null
+  advancedMode: boolean | null
 ): Record<string, Guess[]> {
-  const storedGuesses = localStorage.getItem(selectStorageItem(easyMode));
+  const storedGuesses = localStorage.getItem(selectStorageItem(advancedMode));
   return storedGuesses != null ? JSON.parse(storedGuesses) : {};
 }
 
 export function saveGuesses(
   dayString: string,
-  easyMode: boolean,
+  advancedMode: boolean,
   guesses: Guess[]
 ): void {
-  const allGuesses = loadAllGuesses(easyMode);
+  const allGuesses = loadAllGuesses(advancedMode);
   localStorage.setItem(
-    selectStorageItem(easyMode),
+    selectStorageItem(advancedMode),
     JSON.stringify({
       ...allGuesses,
       [dayString]: guesses,

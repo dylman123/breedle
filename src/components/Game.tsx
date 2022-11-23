@@ -60,7 +60,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     dayString,
     settingsData.rotationMode
   );
-  const easyMode = settingsData.easyMode;
+  const advancedMode = settingsData.advancedMode;
 
   const gameEnded =
     guesses.length === MAX_TRY_COUNT ||
@@ -177,9 +177,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 : {}
             }
           />
-          {easyMode ? (
+          {advancedMode ? (
             <p className="bg-black text-yellow-500 rounded mt-1 px-1 font-sans">
-              Easy mode
+              Advanced mode
             </p>
           ) : null}
         </div>

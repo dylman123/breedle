@@ -133,12 +133,12 @@ export function Settings({
         <div className="flex p-1">
           <input
             type="checkbox"
-            id="setting-easyMode"
-            checked={settingsData.easyMode}
-            onChange={(e) => updateSettings({ easyMode: e.target.checked })}
+            id="setting-advancedMode"
+            checked={settingsData.advancedMode}
+            onChange={(e) => updateSettings({ advancedMode: e.target.checked })}
           />
-          <label className="flex-1 ml-2" htmlFor="setting-easyMode">
-            {t("settings.easyMode")}
+          <label className="flex-1 ml-2" htmlFor="setting-advancedMode">
+            {t("settings.advancedMode")}
           </label>
         </div>
       </div>
