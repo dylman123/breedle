@@ -7,15 +7,32 @@ export interface Guess {
   correct: boolean;
 }
 
-export function loadAllGuesses(): Record<string, Guess[]> {
-  const storedGuesses = localStorage.getItem("guesses");
+function selectStorageItem(advancedMode: boolean | null): string {
+  switch (advancedMode) {
+    case true:
+      return "guesses-hard-mode";
+    case false:
+      return "guesses-easy-mode";
+    default:
+      return "guesses";
+  }
+}
+
+export function loadAllGuesses(
+  advancedMode: boolean | null
+): Record<string, Guess[]> {
+  const storedGuesses = localStorage.getItem(selectStorageItem(advancedMode));
   return storedGuesses != null ? JSON.parse(storedGuesses) : {};
 }
 
-export function saveGuesses(dayString: string, guesses: Guess[]): void {
-  const allGuesses = loadAllGuesses();
+export function saveGuesses(
+  dayString: string,
+  advancedMode: boolean,
+  guesses: Guess[]
+): void {
+  const allGuesses = loadAllGuesses(advancedMode);
   localStorage.setItem(
-    "guesses",
+    selectStorageItem(advancedMode),
     JSON.stringify({
       ...allGuesses,
       [dayString]: guesses,

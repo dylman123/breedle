@@ -110,14 +110,14 @@ export function GuessRow({
       return (
         <div
           onClick={handleClickOnEmptyRow}
-          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded my-8 mx-12`}
+          className={`my-1 col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded my-4 mx-12`}
         />
       );
     case "RUNNING":
       return (
         <>
           <div
-            className={`flex text-2xl justify-evenly items-center col-span-7 border-2 h-8 rounded my-8 mx-12`}
+            className={`flex text-2xl justify-evenly items-center col-span-7 border-2 h-8 rounded my-4 mx-12`}
           >
             {squares.map((character, index) => (
               <div
@@ -135,7 +135,7 @@ export function GuessRow({
       );
     case "ENDED":
       return (
-        <div className="grid grid-cols-7 grid-rows-4 gap-1 text-center my-8 mr-12">
+        <div className="grid grid-cols-7 grid-rows-4 gap-1 text-center my-4 mr-12">
           {guess && targetBreed && (
             <Twemoji
               className="flex items-center justify-center h-8 col-span-1 animate-reveal"
@@ -160,7 +160,9 @@ export function GuessRow({
             className="flex items-center justify-center h-8 col-span-1 animate-reveal"
             text="🌏"
           />
-          <div className={`col-span-6 animate-reveal text-white`}>
+          <div
+            className={`col-span-6 animate-reveal text-white overflow-x-scroll`}
+          >
             {guessedOrigin}
           </div>
           <Twemoji
@@ -168,7 +170,7 @@ export function GuessRow({
             text="📏"
           />
           <div
-            className={`flex items-center justify-start h-8 col-span-6 animate-reveal text-white`}
+            className={`flex items-center justify-start h-8 col-span-6 animate-reveal text-white overflow-x-scroll`}
           >
             {guessedSize}
           </div>

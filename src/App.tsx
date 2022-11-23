@@ -16,23 +16,20 @@ import { useSettings } from "./hooks/useSettings";
 import { Breedle } from "./components/Breedle";
 import { Stats } from "./components/panels/Stats";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { getDayString, useTodays } from "./hooks/useTodays";
-
-const supportLink: Record<string, string> = {
-  UA: "https://donate.redcrossredcrescent.org/ua/donate/~my-donation?_cv=1",
-};
+// import { getDayString, useTodays } from "./hooks/useTodays";
 
 export default function App() {
   const { t, i18n } = useTranslation();
 
-  const dayString = useMemo(getDayString, []);
-  const [{ breed }] = useTodays(dayString);
+  // const dayString = useMemo(getDayString, []);
 
   const [infoOpen, setInfoOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
 
   const [settingsData, updateSettings] = useSettings();
+
+  // const [{ breed }] = useTodays(dayString, settingsData);
 
   useEffect(() => {
     if (settingsData.theme === "dark") {
@@ -139,30 +136,19 @@ export default function App() {
               className="flex items-center justify-center mr-1"
             />{" "}
             <Breedle />? -
-            {breed && supportLink[breed.code] != null ? (
-              <a
-                className="underline pl-1"
-                href={supportLink[breed.code]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-max">{t(`support.${breed.code}`)}</div>
-              </a>
-            ) : (
-              <a
-                className="underline pl-1"
-                href="https://ko-fi.com/dylman123"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-max">
-                  <Twemoji
-                    text={t("buyMeACoffee")}
-                    options={{ className: "inline-block" }}
-                  />
-                </div>
-              </a>
-            )}
+            <a
+              className="underline pl-1"
+              href="https://ko-fi.com/dylman123"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="w-max">
+                <Twemoji
+                  text={t("buyMeACoffee")}
+                  options={{ className: "inline-block" }}
+                />
+              </div>
+            </a>
           </footer>
         </div>
       </div>

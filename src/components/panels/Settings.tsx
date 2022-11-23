@@ -88,16 +88,16 @@ export function Settings({
           </label>
         </div> */}
       </div>
-      {/* <div className="my-4 flex flex-col gap-2">
+      <div className="my-4 flex flex-col gap-2">
         <header className="my-2">
           <h3 className="text-lg font-bold">
             {t("settings.difficultyModifiers")}
           </h3>
-          <div className="text-sm italic text-gray-500">
+          {/* <div className="text-sm italic text-gray-500">
             {t("settings.startingNextDay")}
-          </div>
+          </div> */}
         </header>
-        <div className="flex p-1">
+        {/* <div className="flex p-1">
           <input
             type="checkbox"
             id="setting-showScale"
@@ -129,8 +129,19 @@ export function Settings({
           <label className="flex-1 ml-2" htmlFor="setting-rotationMode">
             {t("settings.rotationMode")}
           </label>
+        </div> */}
+        <div className="flex p-1">
+          <input
+            type="checkbox"
+            id="setting-advancedMode"
+            checked={settingsData.advancedMode}
+            onChange={(e) => updateSettings({ advancedMode: e.target.checked })}
+          />
+          <label className="flex-1 ml-2" htmlFor="setting-advancedMode">
+            {t("settings.advancedMode")}
+          </label>
         </div>
-      </div> */}
+      </div>
       {debugEnabled && (
         <div className="my-4">
           <header className="my-2">

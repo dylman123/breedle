@@ -1,5 +1,4 @@
 import { DateTime } from "luxon";
-// import { breedCodesWithImage } from "./breeds.image";
 import { loadAllGuesses } from "./guess";
 
 export interface StatsData {
@@ -12,9 +11,17 @@ export interface StatsData {
 }
 
 export function getStatsData(): StatsData {
-  const allGuesses = loadAllGuesses();
+  const easyModeGuesses = loadAllGuesses(false);
+  const advancedModeGuesses = loadAllGuesses(true);
+  const noModeGuesses = loadAllGuesses(null); // to maintain guesses before 'advancedMode' was developed
 
-  const allGuessesEntries = Object.entries(allGuesses);
+  const easyModeGuessesEntries = Object.entries(easyModeGuesses);
+  const advancedModeGuessesEntries = Object.entries(advancedModeGuesses);
+  const noModeGuessesEntries = Object.entries(noModeGuesses);
+  const allGuessesEntries = noModeGuessesEntries
+    .concat(easyModeGuessesEntries)
+    .concat(advancedModeGuessesEntries);
+
   const played = allGuessesEntries.length;
 
   const guessDistribution = {

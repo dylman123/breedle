@@ -38,7 +38,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const breedInputRef = useRef<HTMLInputElement>(null);
 
-  const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
+  const [todays, addGuess, randomAngle, imageScale] = useTodays(
+    dayString,
+    settingsData
+  );
   const { breed, guesses } = todays;
   const breedName = useMemo(
     () => (breed ? getBreedName(i18n.resolvedLanguage, breed) : ""),
@@ -57,6 +60,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     dayString,
     settingsData.rotationMode
   );
+  const advancedMode = settingsData.advancedMode;
 
   const gameEnded =
     guesses.length === MAX_TRY_COUNT ||
@@ -145,8 +149,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           />
         </button>
       )}
-      <div className="flex my-1">
-        {settingsData.allowShiftingDay && settingsData.shiftDayCount > 0 && (
+      <div className="flex my-1 mx-auto">
+        {/* {settingsData.allowShiftingDay && settingsData.shiftDayCount > 0 && (
           <button
             type="button"
             onClick={() =>
@@ -157,22 +161,27 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           >
             <Twemoji text="↪️" className="text-xl" />
           </button>
-        )}
-        <img
-          className={`pointer-events-none max-h-32 m-auto transition-transform duration-700 ease-in mt-4 ${
-            hideImageMode && !gameEnded ? "h-0" : "h-full"
-          }`}
-          alt="dog breed to guess"
-          src={`images/breeds/${breed?.image}.jpg`}
-          style={
-            rotationMode && !gameEnded
-              ? {
-                  transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
-                }
-              : {}
-          }
-        />
-        {settingsData.allowShiftingDay && settingsData.shiftDayCount < 7 && (
+        )} */}
+        <div className="flex flex-col w-32 mt-4">
+          <img
+            className={`pointer-events-none object-contain transition-transform duration-700 ease-in`}
+            alt="dog breed to guess"
+            src={`images/breeds/${breed?.image}.jpg`}
+            style={
+              rotationMode && !gameEnded
+                ? {
+                    transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
+                  }
+                : {}
+            }
+          />
+          {advancedMode ? (
+            <p className="bg-black text-yellow-500 rounded mt-1 px-1 font-sans">
+              Advanced mode
+            </p>
+          ) : null}
+        </div>
+        {/* {settingsData.allowShiftingDay && settingsData.shiftDayCount < 7 && (
           <button
             type="button"
             onClick={() =>
@@ -183,9 +192,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           >
             <Twemoji text="↩️" className="text-xl" />
           </button>
-        )}
+        )} */}
       </div>
-      {rotationMode && !hideImageMode && !gameEnded && (
+      {/* {rotationMode && !hideImageMode && !gameEnded && (
         <button
           className="font-bold rounded p-1 border-2 uppercase mb-2 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
           type="button"
@@ -196,7 +205,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             options={{ className: "inline-block" }}
           />
         </button>
-      )}
+      )} */}
       <Guesses
         targetBreed={breed}
         rowCount={MAX_TRY_COUNT}
@@ -204,7 +213,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         settingsData={settingsData}
         breedInputRef={breedInputRef}
       />
-      {isExploding && (
+      {gameEnded && isExploding && (
         <div className="overflow-visible flex justify-center">
           <ConfettiExplosion
             height={2 * window.outerHeight}
@@ -261,6 +270,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 inputRef={breedInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
+                settingsData={settingsData}
               />
               <button
                 className="rounded font-bold p-1 flex items-center justify-center border-2 uppercase my-0.5 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
