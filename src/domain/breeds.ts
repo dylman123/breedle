@@ -27,6 +27,10 @@ export const commonBreeds = breeds.filter((c) =>
   commonBreedCodes.includes(c.code.toLowerCase())
 );
 
+export const uncommonBreeds = breeds.filter(
+  (c) => !commonBreedCodes.includes(c.code.toLowerCase())
+);
+
 export function getBreedName(language: string, breed: Breed) {
   switch (language) {
     // case "co":

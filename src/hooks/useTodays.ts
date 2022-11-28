@@ -1,7 +1,12 @@
 import { DateTime } from "luxon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import seedrandom from "seedrandom";
-import { allBreeds, commonBreeds, Breed } from "../domain/breeds";
+import {
+  allBreeds,
+  commonBreeds,
+  uncommonBreeds,
+  Breed,
+} from "../domain/breeds";
 import { BreedCode } from "../domain/breeds.mapping";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 import { SettingsData } from "./useSettings";
@@ -92,13 +97,15 @@ function getBreed(dayString: string, advancedMode: boolean) {
         ? allBreeds.find((breed) => breed.code === forcedBreedCode)
         : undefined;
 
-    const breedSelection = advancedMode ? allBreeds : commonBreeds;
+    const breedSelection = advancedMode ? uncommonBreeds : commonBreeds;
+
+    const seed = pickingDateString.concat(advancedMode ? "a" : "");
 
     if (forcedBreed != null) {
       pickedBreed = forcedBreed;
     } else {
       let breedIndex = Math.floor(
-        seedrandom.alea(pickingDateString)() * breedSelection.length
+        seedrandom.alea(seed)() * breedSelection.length
       );
       pickedBreed = breedSelection[breedIndex];
 
