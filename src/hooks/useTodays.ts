@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import seedrandom from "seedrandom";
 import {
   allBreeds,
@@ -33,9 +33,7 @@ export function useTodays(
     breed?: Breed;
     guesses: Guess[];
   },
-  (guess: Guess) => void,
-  number,
-  number
+  (guess: Guess) => void
 ] {
   const [todays, setTodays] = useState<{
     breed?: Breed;
@@ -67,18 +65,18 @@ export function useTodays(
     setTodays({ breed, guesses });
   }, [dayString, advancedMode]);
 
-  const randomAngle = useMemo(
-    () => seedrandom.alea(dayString)() * 360,
-    [dayString]
-  );
+  // const randomAngle = useMemo(
+  //   () => seedrandom.alea(dayString)() * 360,
+  //   [dayString]
+  // );
 
-  const imageScale = useMemo(() => {
-    const normalizedAngle = 45 - (randomAngle % 90);
-    const radianAngle = (normalizedAngle * Math.PI) / 180;
-    return 1 / (Math.cos(radianAngle) * Math.sqrt(2));
-  }, [randomAngle]);
+  // const imageScale = useMemo(() => {
+  //   const normalizedAngle = 45 - (randomAngle % 90);
+  //   const radianAngle = (normalizedAngle * Math.PI) / 180;
+  //   return 1 / (Math.cos(radianAngle) * Math.sqrt(2));
+  // }, [randomAngle]);
 
-  return [todays, addGuess, randomAngle, imageScale];
+  return [todays, addGuess];
 }
 
 function getBreed(dayString: string, advancedMode: boolean) {
