@@ -55,11 +55,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     dayString,
     settingsData.noImageMode
   );
-  const [rotationMode, setRotationMode] = useMode(
-    "rotationMode",
-    dayString,
-    settingsData.rotationMode
-  );
   const advancedMode = settingsData.advancedMode;
 
   const gameEnded =
@@ -167,13 +162,13 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             className={`pointer-events-none object-contain transition-transform duration-700 ease-in`}
             alt="dog breed to guess"
             src={`images/breeds/${breed?.image}.jpg`}
-            style={
-              rotationMode && !gameEnded
-                ? {
-                    transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
-                  }
-                : {}
-            }
+            // style={
+            //   !gameEnded
+            //     ? {
+            //         transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
+            //       }
+            //     : {}
+            // }
           />
           {advancedMode ? (
             <p className="bg-black text-yellow-500 rounded mt-1 px-1 font-sans">
@@ -194,18 +189,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           </button>
         )} */}
       </div>
-      {/* {rotationMode && !hideImageMode && !gameEnded && (
-        <button
-          className="font-bold rounded p-1 border-2 uppercase mb-2 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
-          type="button"
-          onClick={() => setRotationMode(false)}
-        >
-          <Twemoji
-            text={t("cancelRotation")}
-            options={{ className: "inline-block" }}
-          />
-        </button>
-      )} */}
       <Guesses
         targetBreed={breed}
         rowCount={MAX_TRY_COUNT}
@@ -232,7 +215,6 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               dayString={dayString}
               settingsData={settingsData}
               hideImageMode={hideImageMode}
-              rotationMode={rotationMode}
               breed={breed}
             />
             <div className="flex flex-wrap gap-2 justify-center">

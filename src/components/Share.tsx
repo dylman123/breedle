@@ -16,7 +16,6 @@ interface ShareProps {
   dayString: string;
   settingsData: SettingsData;
   hideImageMode: boolean;
-  rotationMode: boolean;
   breed: Breed;
 }
 
@@ -25,7 +24,6 @@ export function Share({
   dayString,
   // settingsData,
   // hideImageMode,
-  // rotationMode,
   breed,
 }: ShareProps) {
   const { t } = useTranslation();
